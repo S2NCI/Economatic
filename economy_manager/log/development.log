@@ -2355,3 +2355,407 @@ Processing by Rails::PwaController#manifest as JSON
 Completed 200 OK in 7ms (Views: 3.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/econ_tables" for ::1 at 2024-12-19 10:10:59 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EconTablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering econ_tables/index.html.erb within layouts/application
+  [1m[36mEconTable Load (1.7ms)[0m  [1m[34mSELECT "econ_tables".* FROM "econ_tables"[0m
+  ↳ app/views/econ_tables/index.html.erb:27
+  Rendered econ_tables/index.html.erb within layouts/application (Duration: 46.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 47.8ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 239ms (ActiveRecord: 2.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `calculated_value' for an instance of EconTable):
+
+Causes:
+NoMethodError (undefined method `calculated_value' for an instance of EconTable)
+    44:         <td><%= number_to_currency(econ_table.trade, unit: "$", precision: 0) %></td>
+    45:         <td><%= number_to_currency(econ_table.expenditure, unit: "$", precision: 0) %></td>
+    46:         <td><%= number_to_currency(econ_table.reserve, unit: "$", precision: 0) %></td>
+    47:         <td><%= number_to_currency(econ_table.calculated_value, unit: "$", precision: 0) %></td> <!-- Dynamically calculated value -->
+    48:         <td>
+    49:           <%= link_to "Edit", edit_econ_table_path(econ_table), class: "btn btn-warning" %>
+    50:         </td>
+  
+app/views/econ_tables/index.html.erb:47
+app/views/econ_tables/index.html.erb:27
+Started GET "/econ_tables" for ::1 at 2024-12-19 10:12:58 +0000
+Processing by EconTablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering econ_tables/index.html.erb within layouts/application
+  [1m[36mEconTable Load (1.3ms)[0m  [1m[34mSELECT "econ_tables".* FROM "econ_tables"[0m
+  ↳ app/views/econ_tables/index.html.erb:27
+  Rendered econ_tables/index.html.erb within layouts/application (Duration: 21.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 95.7ms | GC: 0.0ms)
+Completed 200 OK in 199ms (Views: 99.3ms | ActiveRecord: 1.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/fallback_image.jpg" for ::1 at 2024-12-19 10:12:58 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/fallback_image.jpg"):
+  
+Started GET "/manifest.json" for ::1 at 2024-12-19 10:12:58 +0000
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/econ_tables" for ::1 at 2024-12-19 10:17:48 +0000
+Processing by EconTablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering econ_tables/index.html.erb within layouts/application
+  [1m[36mEconTable Load (1.5ms)[0m  [1m[34mSELECT "econ_tables".* FROM "econ_tables"[0m
+  ↳ app/views/econ_tables/index.html.erb:28
+  Rendered econ_tables/index.html.erb within layouts/application (Duration: 18.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 113ms (ActiveRecord: 1.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil):
+
+Causes:
+NoMethodError (undefined method `each' for nil)
+    70:       </tr>
+    71:     </thead>
+    72:     <tbody>
+    73:       <% @ai_tables.each do |ai_table| %>
+    74:         <tr>
+    75:           <td><%= ai_table.field_1 %></td>
+    76:           <td><%= ai_table.field_2 %></td>
+  
+app/views/econ_tables/index.html.erb:73
+Started GET "/econ_tables" for ::1 at 2024-12-19 10:18:51 +0000
+Processing by EconTablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering econ_tables/index.html.erb within layouts/application
+  [1m[36mEconTable Load (1.2ms)[0m  [1m[34mSELECT "econ_tables".* FROM "econ_tables"[0m
+  ↳ app/views/econ_tables/index.html.erb:28
+  Rendered econ_tables/index.html.erb within layouts/application (Duration: 37.9ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 39.6ms | GC: 0.2ms)
+Completed 500 Internal Server Error in 125ms (ActiveRecord: 1.6ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil):
+
+Causes:
+NoMethodError (undefined method `each' for nil)
+    68:         </tr>
+    69:       </thead>
+    70:       <tbody>
+    71:         <% @ai_tables.each do |ai_table| %>
+    72:           <tr>
+    73:             
+    74:             <td>
+  
+app/views/econ_tables/index.html.erb:71
+Started GET "/econ_tables" for ::1 at 2024-12-19 10:22:21 +0000
+Processing by EconTablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering econ_tables/index.html.erb within layouts/application
+  [1m[36mEconTable Load (1.3ms)[0m  [1m[34mSELECT "econ_tables".* FROM "econ_tables"[0m
+  ↳ app/views/econ_tables/index.html.erb:33
+  Rendered econ_tables/index.html.erb within layouts/application (Duration: 16.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 123ms (ActiveRecord: 1.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil):
+
+Causes:
+NoMethodError (undefined method `each' for nil)
+    78:         </tr>
+    79:       </thead>
+    80:       <tbody>
+    81:         <% @ai_tables.each do |ai_table| %>
+    82:           <tr>
+    83:             
+    84:             <td>
+  
+app/views/econ_tables/index.html.erb:81
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateAis (20241219021809)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (6.0ms)[0m  [1m[35mDROP TABLE "ais"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20241219021809'[0m
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateAis (20241219021809)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "ais" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241219021809') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/econ_tables" for ::1 at 2024-12-19 10:24:30 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EconTablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering econ_tables/index.html.erb within layouts/application
+  [1m[36mEconTable Load (1.9ms)[0m  [1m[34mSELECT "econ_tables".* FROM "econ_tables"[0m
+  ↳ app/views/econ_tables/index.html.erb:33
+  Rendered econ_tables/index.html.erb within layouts/application (Duration: 46.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 47.0ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 151ms (ActiveRecord: 2.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil):
+
+Causes:
+NoMethodError (undefined method `each' for nil)
+    78:         </tr>
+    79:       </thead>
+    80:       <tbody>
+    81:         <% @ai_tables.each do |ai_table| %>
+    82:           <tr>
+    83:             
+    84:             <td>
+  
+app/views/econ_tables/index.html.erb:81
+Started GET "/econ_tables" for ::1 at 2024-12-19 10:24:44 +0000
+Processing by EconTablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering econ_tables/index.html.erb within layouts/application
+  [1m[36mEconTable Load (2.1ms)[0m  [1m[34mSELECT "econ_tables".* FROM "econ_tables"[0m
+  ↳ app/views/econ_tables/index.html.erb:33
+  Rendered econ_tables/index.html.erb within layouts/application (Duration: 18.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 85.3ms | GC: 0.0ms)
+Completed 200 OK in 180ms (Views: 89.3ms | ActiveRecord: 2.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/fallback_image.jpg" for ::1 at 2024-12-19 10:24:44 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/fallback_image.jpg"):
+  
+Started GET "/manifest.json" for ::1 at 2024-12-19 10:24:45 +0000
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 4.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/econ_tables/new" for ::1 at 2024-12-19 10:24:47 +0000
+Processing by EconTablesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering econ_tables/new.html.erb within layouts/application
+  Rendered econ_tables/_form.html.erb (Duration: 13.3ms | GC: 0.0ms)
+  Rendered econ_tables/new.html.erb within layouts/application (Duration: 17.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 20.7ms | GC: 0.0ms)
+Completed 200 OK in 25ms (Views: 21.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/econ_tables" for ::1 at 2024-12-19 10:25:13 +0000
+Processing by EconTablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering econ_tables/index.html.erb within layouts/application
+  [1m[36mEconTable Load (1.2ms)[0m  [1m[34mSELECT "econ_tables".* FROM "econ_tables"[0m
+  ↳ app/views/econ_tables/index.html.erb:31
+  Rendered econ_tables/index.html.erb within layouts/application (Duration: 21.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 22.1ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 113ms (ActiveRecord: 1.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil):
+
+Causes:
+NoMethodError (undefined method `each' for nil)
+    76:       </tr>
+    77:     </thead>
+    78:     <tbody>
+    79:       <% @ai_tables.each do |ai_table| %>
+    80:         <tr>
+    81:           
+    82:           <td>
+  
+app/views/econ_tables/index.html.erb:79
+Started GET "/econ_tables" for ::1 at 2024-12-19 10:27:19 +0000
+Processing by EconTablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering econ_tables/index.html.erb within layouts/application
+  [1m[36mEconTable Load (1.3ms)[0m  [1m[34mSELECT "econ_tables".* FROM "econ_tables"[0m
+  ↳ app/views/econ_tables/index.html.erb:31
+  Rendered econ_tables/index.html.erb within layouts/application (Duration: 19.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.7ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 1.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil):
+
+Causes:
+NoMethodError (undefined method `each' for nil)
+    76:       </tr>
+    77:     </thead>
+    78:     <tbody>
+    79:       <% @ai_tables.each do |ai_table| %>
+    80:         <tr>
+    81:           
+    82:           <td>
+  
+app/views/econ_tables/index.html.erb:79
+Started GET "/econ_tables" for ::1 at 2024-12-19 10:28:22 +0000
+Processing by EconTablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering econ_tables/index.html.erb within layouts/application
+  [1m[36mEconTable Load (1.5ms)[0m  [1m[34mSELECT "econ_tables".* FROM "econ_tables"[0m
+  ↳ app/views/econ_tables/index.html.erb:31
+  Rendered econ_tables/index.html.erb within layouts/application (Duration: 48.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 49.6ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 2.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil):
+
+Causes:
+NoMethodError (undefined method `each' for nil)
+    76:       </tr>
+    77:     </thead>
+    78:     <tbody>
+    79:       <% @ai_tables.each do |ai_table| %>
+    80:         <tr>
+    81:           
+    82:           <td>
+  
+app/views/econ_tables/index.html.erb:79
+Started GET "/econ_tables" for ::1 at 2024-12-19 10:33:16 +0000
+Processing by EconTablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering econ_tables/index.html.erb within layouts/application
+  [1m[36mEconTable Load (1.6ms)[0m  [1m[34mSELECT "econ_tables".* FROM "econ_tables"[0m
+  ↳ app/views/econ_tables/index.html.erb:31
+  Rendered econ_tables/index.html.erb within layouts/application (Duration: 17.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 1.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil):
+
+Causes:
+NoMethodError (undefined method `each' for nil)
+    76:       </tr>
+    77:     </thead>
+    78:     <tbody>
+    79:       <% @ai_tables.each do |ai_table| %>
+    80:         <tr>
+    81:           
+    82:           <td>
+  
+app/views/econ_tables/index.html.erb:79
+Started GET "/ai_tables" for ::1 at 2024-12-19 10:33:39 +0000
+Processing by AiTablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ai_tables/index.html.erb within layouts/application
+  [1m[36mAiTable Load (0.6ms)[0m  [1m[34mSELECT "ai_tables".* FROM "ai_tables"[0m
+  ↳ app/views/ai_tables/index.html.erb:8
+  Rendered ai_tables/index.html.erb within layouts/application (Duration: 4.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 30.0ms | GC: 0.0ms)
+Completed 200 OK in 41ms (Views: 34.4ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-12-19 10:33:39 +0000
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/ai_tables/new" for ::1 at 2024-12-19 10:33:40 +0000
+Processing by AiTablesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ai_tables/new.html.erb within layouts/application
+  Rendered ai_tables/_form.html.erb (Duration: 2.8ms | GC: 0.0ms)
+  Rendered ai_tables/new.html.erb within layouts/application (Duration: 7.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 11.7ms | ActiveRecord: 0.3ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/ai_tables" for ::1 at 2024-12-19 10:33:47 +0000
+Processing by AiTablesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "ai_table"=>{"acronym"=>"55", "name"=>"5", "imgUrl"=>"5", "gross"=>"5", "trade"=>"5", "co"=>"55", "iso"=>"5", "ant"=>"5", "state"=>"5", "ind"=>"5"}, "commit"=>"Create Ai table"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/ai_tables_controller.rb:27:in `block in create'
+  [1m[36mAiTable Create (5.3ms)[0m  [1m[32mINSERT INTO "ai_tables" ("acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind", "last_modified") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["acronym", "55"], ["name", "5"], ["imgUrl", "5"], ["gross", 5], ["trade", 5], ["co", 55], ["iso", 5], ["ant", 5], ["state", 5], ["ind", 5], ["last_modified", nil]]
+  ↳ app/controllers/ai_tables_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/ai_tables_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/ai_tables/1
+Completed 302 Found in 16ms (ActiveRecord: 7.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/ai_tables/1" for ::1 at 2024-12-19 10:33:47 +0000
+Processing by AiTablesController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mAiTable Load (0.5ms)[0m  [1m[34mSELECT "ai_tables".* FROM "ai_tables" WHERE "ai_tables"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/ai_tables_controller.rb:63:in `set_ai_table'
+  Rendering layout layouts/application.html.erb
+  Rendering ai_tables/show.html.erb within layouts/application
+  Rendered ai_tables/_ai_table.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered ai_tables/show.html.erb within layouts/application (Duration: 6.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | GC: 0.0ms)
+Completed 200 OK in 20ms (Views: 10.8ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/ai_tables/1/edit" for ::1 at 2024-12-19 10:33:47 +0000
+Processing by AiTablesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAiTable Load (0.1ms)[0m  [1m[34mSELECT "ai_tables".* FROM "ai_tables" WHERE "ai_tables"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/ai_tables_controller.rb:63:in `set_ai_table'
+  Rendering layout layouts/application.html.erb
+  Rendering ai_tables/edit.html.erb within layouts/application
+  Rendered ai_tables/_form.html.erb (Duration: 1.7ms | GC: 0.0ms)
+  Rendered ai_tables/edit.html.erb within layouts/application (Duration: 3.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 7.4ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/ai_tables" for ::1 at 2024-12-19 10:33:48 +0000
+Processing by AiTablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ai_tables/index.html.erb within layouts/application
+  [1m[36mAiTable Load (0.1ms)[0m  [1m[34mSELECT "ai_tables".* FROM "ai_tables"[0m
+  ↳ app/views/ai_tables/index.html.erb:8
+  Rendered ai_tables/_ai_table.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered ai_tables/index.html.erb within layouts/application (Duration: 3.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 7.4ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/econ_tables" for ::1 at 2024-12-19 10:33:51 +0000
+Processing by EconTablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering econ_tables/index.html.erb within layouts/application
+  [1m[36mEconTable Load (0.1ms)[0m  [1m[34mSELECT "econ_tables".* FROM "econ_tables"[0m
+  ↳ app/views/econ_tables/index.html.erb:31
+  Rendered econ_tables/index.html.erb within layouts/application (Duration: 8.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil):
+
+Causes:
+NoMethodError (undefined method `each' for nil)
+    76:       </tr>
+    77:     </thead>
+    78:     <tbody>
+    79:       <% @ai_tables.each do |ai_table| %>
+    80:         <tr>
+    81:           
+    82:           <td>
+  
+app/views/econ_tables/index.html.erb:79
