@@ -34,7 +34,6 @@ jobs:
         uses: ruby/setup-ruby@78c01b705fd9d5ad960d432d3a0cfa341d50e410
         with:
           ruby-version: 3.3.5 # Replace with your desired Ruby version
-        with:
           bundler-cache: true
       # Add or replace database setup steps here
       - name: Set up database schema
