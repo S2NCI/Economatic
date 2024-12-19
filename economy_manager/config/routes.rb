@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :ai_tables
   resources :econ_tables
   resources :ai_table
   resources :econ_table

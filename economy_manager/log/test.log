@@ -642,3 +642,1028 @@ EconTablesControllerTest: test_should_show_econ_table
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.4ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.4ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.9ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.9ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (1.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.9ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.8ms)[0m  [1m[31mDELETE FROM "ai_tables";
+DELETE FROM "ais";
+DELETE FROM "econ_tables";
+DELETE FROM "econs";
+INSERT INTO "ai_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 20, 50, 70, 80, 60);
+INSERT INTO "ais" VALUES ();
+INSERT INTO "ais" VALUES ();
+INSERT INTO "econ_tables" ("id", "acronym", "name", "imgUrl", "gross", "trade", "expenditure", "reserve", "status", "co", "iso", "ant", "state", "ind") VALUES (980190962, 'XYZ', 'Sample Econ Table', 'sample.jpg', 1000, 500, 300, 200, 'Stable', 20, 50, 70, 80, 60);
+INSERT INTO "econs" VALUES ();
+INSERT INTO "econs" VALUES ()[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m

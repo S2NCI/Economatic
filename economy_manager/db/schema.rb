@@ -11,7 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.2].define(version: 2024_12_19_021809) do
-  create_table "ai_table", force: :cascade do |t|
+  create_table "ai_tables", force: :cascade do |t|
     t.string "acronym", limit: 3, null: false
     t.string "name", limit: 255
     t.string "imgUrl", limit: 255
@@ -22,8 +22,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_19_021809) do
     t.integer "ant"
     t.integer "state"
     t.integer "ind"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "last_modified"
   end
 
   create_table "ais", force: :cascade do |t|
@@ -31,7 +30,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_19_021809) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "econ_table", force: :cascade do |t|
+  create_table "econ_tables", force: :cascade do |t|
     t.string "acronym", limit: 3, null: false
     t.string "name", limit: 255
     t.string "imgUrl", limit: 255
@@ -45,8 +44,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_19_021809) do
     t.integer "ant"
     t.integer "state"
     t.integer "ind"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "last_modified"
   end
 
   create_table "econs", force: :cascade do |t|

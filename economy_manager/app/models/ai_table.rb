@@ -1,0 +1,2 @@
+class AiTable < ApplicationRecord
+end

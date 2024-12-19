@@ -1,0 +1,54 @@
+
+<div id="econ_tables">
+  <p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Econ tables" %>
+
+<h1>Econ Tables</h1>
+
+<%= link_to "New Entry", new_econ_table_path, class: "btn btn-primary" %>
+
+<table border="1" cellpadding="10" cellspacing="0">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Acronym</th>
+      <th>Name</th>
+      <th>Disposition</th>
+      <th>Gross</th>
+      <th>Trade</th>
+      <th>Expenditure</th>
+      <th>Reserve</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @econ_tables.each do |econ_table| %>
+      <tr>
+        <td>
+          <% if econ_table.imgUrl.present? %>
+            <% begin %>
+              <%= image_tag econ_table.imgUrl, alt: econ_table.name, onerror: "this.onerror=null;this.src='/fallback_image.jpg';", style: "max-width: 100px; max-height: 100px;" %>
+            <% rescue %>
+              <%= image_tag '/fallback_image.jpg', alt: "Invalid Image", style: "max-width: 150px; max-height: 150px;" %>
+            <% end %>
+          <% else %>
+            <%= image_tag '/fallback_image.jpg', alt: "No Image Provided", style: "max-width: 150px; max-height: 150px;" %>
+          <% end %>
+        </td>
+        <td><%= econ_table.acronym %></td>
+        <td><%= econ_table.name %></td>
+        <td><%= econ_table.status %></td>
+        <td><%= number_to_currency(econ_table.gross, unit: "$", precision: 0) %></td>
+        <td><%= number_to_currency(econ_table.trade, unit: "$", precision: 0) %></td>
+        <td><%= number_to_currency(econ_table.expenditure, unit: "$", precision: 0) %></td>
+        <td><%= number_to_currency(econ_table.reserve, unit: "$", precision: 0) %></td>
+        <td>
+          <%= link_to "Edit", edit_econ_table_path(econ_table), class: "btn btn-warning" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+

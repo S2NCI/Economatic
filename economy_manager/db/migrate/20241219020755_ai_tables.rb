@@ -1,18 +1,17 @@
-class EconTable < ActiveRecord::Migration[7.2]
+class AiTables < ActiveRecord::Migration[7.2]
   def change
-    #drop_table :econ_table, if_exists: true
-    drop_table :econ_tables, if_exists: true
+    #drop_table :ai_tables, if_exists: true
+    drop_table :ai_table, if_exists: true
 
-    create_table :econ_table, if_not_exists: true do |t|
+    create_table :ai_tables, if_not_exists: true do |t|
       t.string :acronym, limit: 3, null: false       # 3-character string (key)
       t.string :name, limit: 255                     # 255-character string
       t.string :imgUrl, limit: 255                   # Representational image URL string
       t.integer :gross                               # Integer field for gross annual
       t.integer :trade                               # Integer field for annual trade balance
-      t.integer :expenditure                         # Integer field for non-trade expenditure
-      t.integer :reserve                             # Integer field for reserve quantity
-      t.string :status                               # Field with predefined values for adjustments
-      #Thrify, Fertile, Booming, Friendly, Stable, Naval, Swift, Resistant, Industrious
+      # non-trade expenditure calculated as maximum
+      # no reserve
+      # no predefined values for adjustments
 
       # Ideological Fields      
       t.integer :co   
@@ -20,6 +19,7 @@ class EconTable < ActiveRecord::Migration[7.2]
       t.integer :ant    
       t.integer :state   
       t.integer :ind
+
       t.datetime :last_modified  # Replaces created_at and updated_at
     end
   end

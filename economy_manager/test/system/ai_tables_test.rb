@@ -2,7 +2,7 @@ require "application_system_test_case"
 
 class AiTablesTest < ApplicationSystemTestCase
   setup do
-    @ai_table = ai_table(:one)
+    @ai_table = ai_tables(:one)
   end
 
   test "visiting the index" do
@@ -18,6 +18,7 @@ class AiTablesTest < ApplicationSystemTestCase
     fill_in "Ant", with: @ai_table.ant
     fill_in "Co", with: @ai_table.co
     fill_in "Gross", with: @ai_table.gross
+    fill_in "Imgurl", with: @ai_table.imgUrl
     fill_in "Ind", with: @ai_table.ind
     fill_in "Iso", with: @ai_table.iso
     fill_in "Name", with: @ai_table.name
@@ -37,6 +38,7 @@ class AiTablesTest < ApplicationSystemTestCase
     fill_in "Ant", with: @ai_table.ant
     fill_in "Co", with: @ai_table.co
     fill_in "Gross", with: @ai_table.gross
+    fill_in "Imgurl", with: @ai_table.imgUrl
     fill_in "Ind", with: @ai_table.ind
     fill_in "Iso", with: @ai_table.iso
     fill_in "Name", with: @ai_table.name

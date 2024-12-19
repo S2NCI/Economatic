@@ -2,7 +2,7 @@ require "test_helper"
 
 class EconTablesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @econ_table = econ_table(:one)
+    @econ_table = econ_tables(:one)
   end
 
   test "should get index" do
@@ -17,7 +17,7 @@ class EconTablesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create econ_table" do
     assert_difference("EconTable.count") do
-      post econ_tables_url, params: { econ_table: { acronym: @econ_table.acronym, ant: @econ_table.ant, co: @econ_table.co, expenditure: @econ_table.expenditure, gross: @econ_table.gross, ind: @econ_table.ind, iso: @econ_table.iso, name: @econ_table.name, reserve: @econ_table.reserve, state: @econ_table.state, status: @econ_table.status, trade: @econ_table.trade } }
+      post econ_tables_url, params: { econ_table: { acronym: @econ_table.acronym, ant: @econ_table.ant, co: @econ_table.co, expenditure: @econ_table.expenditure, gross: @econ_table.gross, imgUrl: @econ_table.imgUrl, ind: @econ_table.ind, iso: @econ_table.iso, name: @econ_table.name, reserve: @econ_table.reserve, state: @econ_table.state, status: @econ_table.status, trade: @econ_table.trade } }
     end
 
     assert_redirected_to econ_table_url(EconTable.last)
@@ -34,7 +34,7 @@ class EconTablesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update econ_table" do
-    patch econ_table_url(@econ_table), params: { econ_table: { acronym: @econ_table.acronym, ant: @econ_table.ant, co: @econ_table.co, expenditure: @econ_table.expenditure, gross: @econ_table.gross, ind: @econ_table.ind, iso: @econ_table.iso, name: @econ_table.name, reserve: @econ_table.reserve, state: @econ_table.state, status: @econ_table.status, trade: @econ_table.trade } }
+    patch econ_table_url(@econ_table), params: { econ_table: { acronym: @econ_table.acronym, ant: @econ_table.ant, co: @econ_table.co, expenditure: @econ_table.expenditure, gross: @econ_table.gross, imgUrl: @econ_table.imgUrl, ind: @econ_table.ind, iso: @econ_table.iso, name: @econ_table.name, reserve: @econ_table.reserve, state: @econ_table.state, status: @econ_table.status, trade: @econ_table.trade } }
     assert_redirected_to econ_table_url(@econ_table)
   end
 
