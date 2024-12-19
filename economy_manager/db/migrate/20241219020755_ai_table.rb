@@ -1,5 +1,8 @@
 class AiTable < ActiveRecord::Migration[7.2]
   def change
+    #drop_table :ai_table, if_exists: true
+    drop_table :ai_tables, if_exists: true
+
     create_table :ai_table, if_not_exists: true do |t|
       t.string :acronym, limit: 3, null: false       # 3-character string (key)
       t.string :name, limit: 255                     # 255-character string
@@ -17,7 +20,7 @@ class AiTable < ActiveRecord::Migration[7.2]
       t.integer :state   
       t.integer :ind
 
-      t.timestamps                                  # Adds created_at and updated_at
+      t.datetime :last_modified  # Replaces created_at and updated_at
     end
   end
 end

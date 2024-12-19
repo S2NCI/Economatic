@@ -18,6 +18,15 @@ class EconTable < ApplicationRecord
     in: %w[Thrify Fertile Booming Friendly Stable Naval Swift Resistant Industrious],
     message: "%{value} is not a valid status"
   }
+  
+  # Set `last_modified` to the time saved at
+  before_save :set_last_modified
+
+  private
+
+  def set_last_modified
+    self.last_modified = Time.now
+  end
 end
 
 #rails generate scaffold EconTable acronym:string name:string imgUrl:string gross:integer trade:integer expenditure:integer reserve:integer status:string co:integer iso:integer ant:integer state:integer ind:integer

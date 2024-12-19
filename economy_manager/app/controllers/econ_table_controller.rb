@@ -1,2 +1,0 @@
-class EconTableController < ApplicationController
-end

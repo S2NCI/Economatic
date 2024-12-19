@@ -1,0 +1,2 @@
+class EconTable < ApplicationRecord
+end

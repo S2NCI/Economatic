@@ -4,8 +4,15 @@
 # model remove the "{}" from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-# column: value
+one:
+  acronym: "XYZ"
+  name: "Sample Econ Table"
+  imgUrl: "sample.jpg"
+  gross: 1000
+  trade: 500
+  co: 20
+  iso: 50
+  ant: 70
+  state: 80
+  ind: 60
+

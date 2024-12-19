@@ -2,7 +2,7 @@ require "application_system_test_case"
 
 class AiTablesTest < ApplicationSystemTestCase
   setup do
-    @ai_table = ai_tables(:one)
+    @ai_table = ai_table(:one)
   end
 
   test "visiting the index" do

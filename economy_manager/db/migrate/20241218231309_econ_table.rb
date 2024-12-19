@@ -1,5 +1,8 @@
 class EconTable < ActiveRecord::Migration[7.2]
   def change
+    #drop_table :econ_table, if_exists: true
+    drop_table :econ_tables, if_exists: true
+
     create_table :econ_table, if_not_exists: true do |t|
       t.string :acronym, limit: 3, null: false       # 3-character string (key)
       t.string :name, limit: 255                     # 255-character string
@@ -17,8 +20,7 @@ class EconTable < ActiveRecord::Migration[7.2]
       t.integer :ant    
       t.integer :state   
       t.integer :ind
-
-      t.timestamps                                  # Adds created_at and updated_at
+      t.datetime :last_modified  # Replaces created_at and updated_at
     end
   end
 end
