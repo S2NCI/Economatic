@@ -1,10 +1,10 @@
 
-name: Deploy to EC2
+name: Deploy Economiser to EC2
 
 on:
   push:
     branches:
-      - main  # Adjust the branch to match your deployment branch
+      - main
 
 jobs:
   deploy:
@@ -12,51 +12,59 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout the code
+      # Step 1: Checkout the code
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Set up Ruby
+      # Step 2: Set up Ruby environment
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.1.2  # Adjust Ruby version to your project's requirements
+          ruby-version: 3.3.5
           bundler-cache: true
 
-      # Install dependencies
+      # Step 3: Navigate to `economy_manager` and install dependencies
       - name: Install dependencies
-        run: bundle install
+        run: |
+          cd economy_manager
+          bundle install
 
-      # Run tests (optional, skip if you don't want to test before deployment)
-      - name: Run tests
-        run: bin/rails test
+      # Step 4: Run database migrations (optional: skip if not needed for deployment)
+      - name: Set up database
+        run: |
+          cd economy_manager
+          bin/rails db:migrate RAILS_ENV=production
 
-      # Deploy to EC2
+      # Step 5: Precompile assets
+      - name: Precompile assets
+        run: |
+          cd economy_manager
+          bin/rails assets:precompile RAILS_ENV=production
+
+      # Step 6: Deploy to EC2
       - name: Deploy to EC2
         env:
           SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
           EC2_HOST: ${{ secrets.EC2_HOST }}
           EC2_USER: ${{ secrets.EC2_USER }}
         run: |
-          # Add EC2's SSH key to the SSH agent
           echo "$SSH_PRIVATE_KEY" > private_key.pem
           chmod 600 private_key.pem
 
-          # Define deployment directory on EC2
-          DEPLOY_DIR=/var/www/rails_app
+          DEPLOY_DIR=/var/www/economiser
 
-          # Transfer application code to EC2
-          scp -i private_key.pem -r . $EC2_USER@$EC2_HOST:$DEPLOY_DIR
+          # Transfer the application files to the EC2 instance
+          scp -i private_key.pem -r ./economy_manager $EC2_USER@$EC2_HOST:$DEPLOY_DIR
 
-          # SSH into EC2 and restart the application
+          # SSH into the EC2 instance and finalize the deployment
           ssh -i private_key.pem $EC2_USER@$EC2_HOST << 'EOF'
           cd $DEPLOY_DIR
           bundle install
-          RAILS_ENV=production bin/rails assets:precompile
           RAILS_ENV=production bin/rails db:migrate
-          sudo systemctl restart rails_app  # Update with your Rails app service name
+          RAILS_ENV=production bin/rails assets:precompile
+          sudo systemctl restart economiser # Replace with the actual service name if different
           EOF
 
-      # Clean up private key
+      # Step 7: Clean up sensitive data
       - name: Clean up
         run: rm -f private_key.pem
