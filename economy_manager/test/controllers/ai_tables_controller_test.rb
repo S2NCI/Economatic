@@ -2,7 +2,7 @@ require "test_helper"
 
 class AiTablesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @ai_table = ai_tables(:one)
+    @ai_table = ai_table(:one)
   end
 
   test "should get index" do

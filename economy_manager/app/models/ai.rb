@@ -12,12 +12,6 @@ class AiTable < ApplicationRecord
    # Validation for ideological fields (must be between 0 and 100)
    validates :co, :iso, :ant, :state, :ind,
              numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 100 }, allow_nil: true
- 
-   # Validation for status (must be one of the predefined values)
-   validates :status, inclusion: {
-     in: %w[Thrify Fertile Booming Friendly Stable Naval Swift Resistant Industrious],
-     message: "%{value} is not a valid status"
-   }
 end
 
 #rails generate scaffold AiTable acronym:string name:string imgUrl:string gross:integer trade:integer co:integer iso:integer ant:integer state:integer ind:integer

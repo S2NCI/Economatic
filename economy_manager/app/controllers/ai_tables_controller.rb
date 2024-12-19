@@ -3,7 +3,7 @@ class AiTablesController < ApplicationController
 
   # GET /ai_tables or /ai_tables.json
   def index
-    @ai_tables = AiTable.all
+    @ai_table = AiTable.all
   end
 
   # GET /ai_tables/1 or /ai_tables/1.json

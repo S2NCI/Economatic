@@ -1,6 +1,6 @@
-class EconTable < ActiveRecord::Migration[7.2]def up
+class EconTable < ActiveRecord::Migration[7.2]
   def change
-    create_table :econ_tables do |t|
+    create_table :econ_table, if_not_exists: true do |t|
       t.string :acronym, limit: 3, null: false       # 3-character string (key)
       t.string :name, limit: 255                     # 255-character string
       t.string :imgUrl, limit: 255                   # Representational image URL string

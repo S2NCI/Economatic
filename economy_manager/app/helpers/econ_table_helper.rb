@@ -1,0 +1,2 @@
+module EconTableHelper
+end

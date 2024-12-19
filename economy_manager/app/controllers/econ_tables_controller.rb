@@ -3,7 +3,7 @@ class EconTablesController < ApplicationController
 
   # GET /econ_tables or /econ_tables.json
   def index
-    @econ_tables = EconTable.all
+    @econ_table = EconTable.all
   end
 
   # GET /econ_tables/1 or /econ_tables/1.json

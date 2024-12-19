@@ -1,6 +1,6 @@
 class AiTable < ActiveRecord::Migration[7.2]
   def change
-    create_table :econ_table do |t|
+    create_table :ai_table, if_not_exists: true do |t|
       t.string :acronym, limit: 3, null: false       # 3-character string (key)
       t.string :name, limit: 255                     # 255-character string
       t.string :imgUrl, limit: 255                   # Representational image URL string
@@ -8,7 +8,7 @@ class AiTable < ActiveRecord::Migration[7.2]
       t.integer :trade                               # Integer field for annual trade balance
       # non-trade expenditure calculated as maximum
       # no reserve
-      t.string :status                               # Field with predefined values for adjustments
+      # no predefined values for adjustments
 
       # Ideological Fields      
       t.integer :co   

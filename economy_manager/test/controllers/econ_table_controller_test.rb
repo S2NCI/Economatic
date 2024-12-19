@@ -2,7 +2,7 @@ require "test_helper"
 
 class EconTablesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @econ_table = econ_tables(:one)
+    @econ_table = econ_table(:one)
   end
 
   test "should get index" do
