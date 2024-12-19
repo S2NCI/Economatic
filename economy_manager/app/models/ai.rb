@@ -6,7 +6,7 @@ class AiTable < ApplicationRecord
    validates :name, :imgUrl, presence: true, length: { maximum: 255 }
  
    # Validation for general integer fields (must be non-negative)
-   validates :gross, :trade, :expenditure, :reserve,
+   validates :gross, :trade, :expenditure,
              numericality: { greater_than_or_equal_to: 0 }, allow_nil: true
  
    # Validation for ideological fields (must be between 0 and 100)

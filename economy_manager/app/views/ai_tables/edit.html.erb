@@ -1,12 +1,12 @@
-<% content_for :title, "Editing ai table" %>
+<% content_for :title, "Editing Minor Entry" %>
 
-<h1>Editing ai table</h1>
-
+<h1>Editing Minor Entry</h1>
+<p style="color: green"><%= notice %></p>
 <%= render "form", ai_table: @ai_table %>
 
-<br>
 
 <div>
-  <%= link_to "Show this ai table", @ai_table %> |
-  <%= link_to "Back to ai tables", ai_tables_path %>
+  <%= button_to "Delete", @ai_table, method: :delete %>
+  <br><br/>
+  <%= link_to "Back to Tables", tables_path %>
 </div>

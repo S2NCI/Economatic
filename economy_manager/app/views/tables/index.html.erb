@@ -1,0 +1,106 @@
+<div id="econ_tables">
+
+  <% content_for :title, "Econ tables" %>
+
+  <h1>Major Table</h1>
+
+  <%= link_to "New Entry", new_econ_table_path, class: "btn btn-primary" %>
+
+  <table border="1" cellpadding="10" cellspacing="0">
+    <thead>
+      <tr>
+        <th style="width: 100px;"></th>
+        <th style="width: 100px;">Acronym</th>
+        <th style="width: 100px;">Name</th>
+        <th style="width: 100px;">Disposition</th>
+        <th style="width: 100px;">Gross</th>
+        <th style="width: 100px;">Trade</th>
+        <th style="width: 100px;">Expenditure</th>
+        <th style="width: 100px;">Reserve</th>
+        <th style="width: 100px;">Defecit</th>
+        <th style="width: 100px;">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @econ_tables.each do |econ_table| %>
+        <tr>
+          <td>
+            <% if econ_table.imgUrl.present? %>
+              <% begin %>
+                <%= image_tag econ_table.imgUrl, alt: econ_table.name, onerror: "this.onerror=null;this.src='/fallback_image.jpg';", style: "max-width: 100px; max-height: 100px;" %>
+              <% rescue %>
+                <%= image_tag '/fallback_image.jpg', alt: "Invalid Image", style: "max-width: 150px; max-height: 150px;" %>
+              <% end %>
+            <% else %>
+              <%= image_tag '/fallback_image.jpg', alt: "No Image Provided", style: "max-width: 150px; max-height: 150px;" %>
+            <% end %>
+          </td>
+          <td><%= econ_table.acronym %></td>
+          <td><%= econ_table.name %></td>
+          <td><%= econ_table.status %></td>
+          <td><%= number_to_currency(econ_table.gross, unit: "$", precision: 0) %></td>
+          <td><%= number_to_currency(econ_table.trade, unit: "$", precision: 0) %></td>
+          <td><%= number_to_currency(econ_table.expenditure, unit: "$", precision: 0) %></td>
+          <td><%= number_to_currency(econ_table.reserve, unit: "$", precision: 0) %></td>
+          <td><%= number_to_currency(econ_table.calculated_deficit, unit: "$", precision: 0) %></td> <!-- Dynamically calculated value -->
+          <td>
+            <%= link_to "Details", edit_econ_table_path(econ_table), class: "btn btn-warning" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div id="ai_tables">
+
+
+  <h1>Minor Table</h1>
+
+  <%= link_to "New Entry", new_ai_table_path, class: "btn btn-primary" %>
+
+  <table border="1" cellpadding="10" cellspacing="0">
+    <thead>
+      <tr>
+        <th style="width: 100px;"></th>
+        <th style="width: 100px;">Acronym</th>
+        <th style="width: 100px;">Name</th>
+        <th style="width: 100px;"></th>
+        <th style="width: 100px;">Gross</th>
+        <th style="width: 100px;">Trade</th>
+        <th style="width: 100px;">Expenditure</th>
+        <th style="width: 100px;"></th>
+        <th style="width: 100px;"></th>
+        <th style="width: 100px;">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @ai_tables.each do |ai_table| %>
+        <tr>
+          <td>
+            <% if ai_table.imgUrl.present? %>
+              <% begin %>
+                <%= image_tag ai_table.imgUrl, alt: ai_table.name, onerror: "this.onerror=null;this.src='/fallback_image.jpg';", style: "max-width: 100px; max-height: 100px;" %>
+              <% rescue %>
+                <%= image_tag '/fallback_image.jpg', alt: "Invalid Image", style: "max-width: 150px; max-height: 150px;" %>
+              <% end %>
+            <% else %>
+              <%= image_tag '/fallback_image.jpg', alt: "No Image Provided", style: "max-width: 150px; max-height: 150px;" %>
+            <% end %>
+          </td>
+          <td><%= ai_table.acronym %></td>
+          <td><%= ai_table.name %></td>
+          <td></td>
+          <td><%= number_to_currency(ai_table.gross, unit: "$", precision: 0) %></td>
+          <td><%= number_to_currency(ai_table.trade, unit: "$", precision: 0) %></td>
+          <td><%= number_to_currency(ai_table.calculated_expenditure, unit: "$", precision: 0) %></td>  <!-- Dynamically calculated value -->
+          <td></td>
+          <td></td>
+          <td>
+            <%= link_to "Details", edit_ai_table_path(ai_table), class: "btn btn-warning" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

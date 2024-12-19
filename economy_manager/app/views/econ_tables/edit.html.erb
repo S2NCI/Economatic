@@ -1,12 +1,12 @@
-<% content_for :title, "Editing econ table" %>
+<% content_for :title, "Editing Major Entry" %>
 
-<h1>Editing econ table</h1>
-
+<h1>Editing Major Entry</h1>
+<p style="color: green"><%= notice %></p>
 <%= render "form", econ_table: @econ_table %>
 
-<br>
 
 <div>
-  <%= link_to "Show this econ table", @econ_table %> |
-  <%= link_to "Back to econ tables", econ_tables_path %>
+  <%= button_to "Destroy this Entry", @econ_table, method: :delete %>
+  <br><br/>
+  <%= link_to "Back to Tables", tables_path %>
 </div>

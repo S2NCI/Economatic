@@ -22,7 +22,7 @@
   </div>
 
   <div>
-    <%= form.label :imgUrl, style: "display: block" %>
+    <%= form.label :imgUrl, "Image URL", style: "display: block" %>
     <%= form.text_field :imgUrl %>
   </div>
 
@@ -42,41 +42,138 @@
   </div>
 
   <div>
-    <%= form.label :reserve, style: "display: block" %>
+    <%= form.label :reserve, "Reserve", style: "display: block" %>
     <%= form.number_field :reserve %>
   </div>
 
   <div>
     <%= form.label :status, style: "display: block" %>
-    <%= form.text_field :status %>
+    <%= form.select :status, options_for_select([ 'Friendly', 'Swift', 'Thrifty', 'Generous', 'Independent', 'Reliable'], econ_table.status) %>
+  </div>
+
+  <hr></hr>
+
+  <div>
+    <%= form.label :co, "Co-Operative Coefficient", style: "display: block" %>
+    <input type="range" id="co_slider" min="0" max="100" value="<%= econ_table.co %>" oninput="adjustSliders('co')" />
+    <span id="co_value"><%= econ_table.co %></span>
+    <%= form.hidden_field :co, id: "co_hidden", value: econ_table.co %>
   </div>
 
   <div>
-    <%= form.label :co, style: "display: block" %>
-    <%= form.number_field :co %>
+    <%= form.label :iso, "Isolationist Coefficient", style: "display: block" %>
+    <input type="range" id="iso_slider" min="0" max="100" value="<%= econ_table.iso %>" oninput="adjustSliders('iso')" />
+    <span id="iso_value"><%= econ_table.iso %></span>
+    <%= form.hidden_field :iso, id: "iso_hidden", value: econ_table.iso %>
   </div>
 
   <div>
-    <%= form.label :iso, style: "display: block" %>
-    <%= form.number_field :iso %>
+    <%= form.label :ant, "Antagonistic Coefficient", style: "display: block" %>
+    <input type="range" id="ant_slider" min="0" max="100" value="<%= econ_table.ant %>" oninput="adjustSliders('nt')" />
+    <span id="ant_value"><%= econ_table.ant %></span>
+    <%= form.hidden_field :ant, id: "ant_hidden", value: econ_table.ant %>
   </div>
 
-  <div>
-    <%= form.label :ant, style: "display: block" %>
-    <%= form.number_field :ant %>
-  </div>
+  <script>
+    const sliders = {
+      co: document.getElementById('co_slider'),
+      iso: document.getElementById('iso_slider'),
+      ant: document.getElementById('ant_slider')
+    };
 
-  <div>
-    <%= form.label :state, style: "display: block" %>
-    <%= form.number_field :state %>
-  </div>
+    const values = {
+      co: document.getElementById('co_value'),
+      iso: document.getElementById('iso_value'),
+      ant: document.getElementById('ant_value')
+    };
 
+    const hiddenFields = {
+      co: document.getElementById('co_hidden'),
+      iso: document.getElementById('iso_hidden'),
+      ant: document.getElementById('ant_hidden')
+    };
+
+    // Function to jiggle the first 3 values around so the total is always equal to 100
+    function adjustSliders(changed) {
+      const total = 
+        parseInt(sliders.co.value) + 
+        parseInt(sliders.iso.value) + 
+        parseInt(sliders.ant.value);
+
+      if (total > 100) {
+        const excess = total - 100;
+        distributeExcess(excess, changed);
+      } else if (total < 100) {
+        const deficit = 100 - total;
+        distributeExcess(deficit, changed, true); // Increase other sliders
+      }
+
+      updateDisplay();
+    }
+
+    // Current implementation only drags one
+    function distributeExcess(amount, changed, increase) {
+    const others = Object.keys(sliders).filter(key => key !== changed);
+    for (let i = 0; i < others.length; i++) {
+      const otherSlider = sliders[others[i]];
+      const currentValue = parseInt(otherSlider.value);
+
+      if (increase) {
+        const space = 100 - currentValue;
+        if (space >= amount) {
+          otherSlider.value = currentValue + amount;
+          break;
+        } else {
+          amount -= space;
+          otherSlider.value = 100;
+        }
+      } else {
+        if (currentValue >= amount) {
+          otherSlider.value = currentValue - amount;
+          break;
+        } else {
+          amount -= currentValue;
+          otherSlider.value = 0;
+        }
+      }
+    }
+  }
+
+    function updateDisplay() {
+      for (const key in sliders) {
+        values[key].textContent = sliders[key].value;
+        hiddenFields[key].value = sliders[key].value;
+      }
+    }
+  </script>
+  
   <div>
-    <%= form.label :ind, style: "display: block" %>
-    <%= form.number_field :ind %>
+    <%= form.label :state, "State & Ind Coefficient (0-100)", style: "display: block" %>
+    <input type="range" min="0" max="100" step="1" id="state_ind_slider" value="<%= econ_table.state %>" />
+    <div>
+      <p>Statism: <span id="state_value"><%= econ_table.state %></span></p>
+      <p>Individualism: <span id="ind_value"><%= econ_table.ind %></span></p>
+    </div>
+    <%= form.hidden_field :state, id: "state_value_hidden", value: econ_table.state %>
+    <%= form.hidden_field :ind, id: "ind_value_hidden", value: econ_table.ind %>
   </div>
 
   <div>
     <%= form.submit %>
   </div>
+
+  <script>
+    // JavaScript to update both state and ind when slider is moved
+    document.getElementById("state_ind_slider").addEventListener("input", function() {
+      var sliderValue = this.value;
+
+      // Update the displayed values dynamically as the slider moves
+      document.getElementById("state_value").innerText = sliderValue;
+      document.getElementById("ind_value").innerText = 100 - sliderValue; // Ind value is the complement of state
+
+      // Set the hidden fields for the form submission
+      document.getElementById("state_value_hidden").value = sliderValue;
+      document.getElementById("ind_value_hidden").value = 100 - sliderValue;
+    });
+  </script>
 <% end %>
