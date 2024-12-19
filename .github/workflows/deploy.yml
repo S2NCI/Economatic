@@ -37,12 +37,16 @@ jobs:
 
       # Step 5: Run database migrations (optional: skip if not needed for deployment)
       - name: Set up database
+        env:
+          PATH: ${{ steps.setup-ruby.outputs.ruby-path }}/bin:$PATH
         run: |
           cd economy_manager
           bin/rails db:migrate RAILS_ENV=production
 
       # Step 6: Precompile assets
       - name: Precompile assets
+        env:
+          PATH: ${{ steps.setup-ruby.outputs.ruby-path }}/bin:$PATH
         run: |
           cd economy_manager
           bin/rails assets:precompile RAILS_ENV=production
