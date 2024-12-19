@@ -1,0 +1,62 @@
+<%= form_with(model: ai_table) do |form| %>
+  <% if ai_table.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(ai_table.errors.count, "error") %> prohibited this ai_table from being saved:</h2>
+
+      <ul>
+        <% ai_table.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :acronym, style: "display: block" %>
+    <%= form.text_field :acronym %>
+  </div>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :gross, style: "display: block" %>
+    <%= form.number_field :gross %>
+  </div>
+
+  <div>
+    <%= form.label :trade, style: "display: block" %>
+    <%= form.number_field :trade %>
+  </div>
+
+  <div>
+    <%= form.label :co, style: "display: block" %>
+    <%= form.number_field :co %>
+  </div>
+
+  <div>
+    <%= form.label :iso, style: "display: block" %>
+    <%= form.number_field :iso %>
+  </div>
+
+  <div>
+    <%= form.label :ant, style: "display: block" %>
+    <%= form.number_field :ant %>
+  </div>
+
+  <div>
+    <%= form.label :state, style: "display: block" %>
+    <%= form.number_field :state %>
+  </div>
+
+  <div>
+    <%= form.label :ind, style: "display: block" %>
+    <%= form.number_field :ind %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

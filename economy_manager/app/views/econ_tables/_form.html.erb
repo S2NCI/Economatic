@@ -1,0 +1,77 @@
+<%= form_with(model: econ_table) do |form| %>
+  <% if econ_table.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(econ_table.errors.count, "error") %> prohibited this econ_table from being saved:</h2>
+
+      <ul>
+        <% econ_table.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :acronym, style: "display: block" %>
+    <%= form.text_field :acronym %>
+  </div>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :gross, style: "display: block" %>
+    <%= form.number_field :gross %>
+  </div>
+
+  <div>
+    <%= form.label :trade, style: "display: block" %>
+    <%= form.number_field :trade %>
+  </div>
+
+  <div>
+    <%= form.label :expenditure, style: "display: block" %>
+    <%= form.number_field :expenditure %>
+  </div>
+
+  <div>
+    <%= form.label :reserve, style: "display: block" %>
+    <%= form.number_field :reserve %>
+  </div>
+
+  <div>
+    <%= form.label :status, style: "display: block" %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div>
+    <%= form.label :co, style: "display: block" %>
+    <%= form.number_field :co %>
+  </div>
+
+  <div>
+    <%= form.label :iso, style: "display: block" %>
+    <%= form.number_field :iso %>
+  </div>
+
+  <div>
+    <%= form.label :ant, style: "display: block" %>
+    <%= form.number_field :ant %>
+  </div>
+
+  <div>
+    <%= form.label :state, style: "display: block" %>
+    <%= form.number_field :state %>
+  </div>
+
+  <div>
+    <%= form.label :ind, style: "display: block" %>
+    <%= form.number_field :ind %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,12 @@
+<% content_for :title, "Editing ai table" %>
+
+<h1>Editing ai table</h1>
+
+<%= render "form", ai_table: @ai_table %>
+
+<br>
+
+<div>
+  <%= link_to "Show this ai table", @ai_table %> |
+  <%= link_to "Back to ai tables", ai_tables_path %>
+</div>

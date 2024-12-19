@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  acronym: MyString
+  name: MyString
+  gross: 1
+  trade: 1
+  co: 1
+  iso: 1
+  ant: 1
+  state: 1
+  ind: 1
+
+two:
+  acronym: MyString
+  name: MyString
+  gross: 1
+  trade: 1
+  co: 1
+  iso: 1
+  ant: 1
+  state: 1
+  ind: 1

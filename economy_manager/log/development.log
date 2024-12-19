@@ -1,0 +1,747 @@
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-12-19 02:36:24.577038', '2024-12-19 02:36:24.577041') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to EconTable (20241218231309)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "econ_table" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "acronym" varchar(3) NOT NULL, "name" varchar(255), "gross" integer, "trade" integer, "expenditure" integer, "reserve" integer, "status" varchar, "co" integer, "iso" integer, "ant" integer, "state" integer, "ind" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241218231309') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateEcons (20241219020721)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "econs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241219020721') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AiTable (20241219020755)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "econ_table" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "acronym" varchar(3) NOT NULL, "name" varchar(255), "gross" integer, "trade" integer, "status" varchar, "co" integer, "iso" integer, "ant" integer, "state" integer, "ind" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AiTable (20241219020755)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "ai_table" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "acronym" varchar(3) NOT NULL, "name" varchar(255), "gross" integer, "trade" integer, "status" varchar, "co" integer, "iso" integer, "ant" integer, "state" integer, "ind" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241219020755') RETURNING "version"[0m
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateAis (20241219021809)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "ais" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241219021809') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEconTables (20241219025411)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "econ_tables" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "acronym" varchar, "name" varchar, "gross" integer, "trade" integer, "expenditure" integer, "reserve" integer, "status" varchar, "co" integer, "iso" integer, "ant" integer, "state" integer, "ind" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241219025411') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateAiTables (20241219025548)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (12.8ms)[0m  [1m[35mCREATE TABLE "ai_tables" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "acronym" varchar, "name" varchar, "gross" integer, "trade" integer, "co" integer, "iso" integer, "ant" integer, "state" integer, "ind" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241219025548') RETURNING "version"[0m
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/econ_tables/new" for ::1 at 2024-12-19 03:01:21 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EconTablesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering econ_tables/new.html.erb within layouts/application
+  Rendered econ_tables/new.html.erb within layouts/application (Duration: 86.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1545.7ms | GC: 990.3ms)
+Completed 500 Internal Server Error in 2268ms (ActiveRecord: 5.3ms (0 queries, 0 cached) | GC: 990.3ms)
+
+
+  
+ActionView::Template::Error (Permission denied @ rb_file_s_rename - (C:/Users/spart/Documents/GitHubProjects/CloudAppProject/economy_manager/tmp/cache/assets/sprockets/v4.0.0/6X/6Xnf0BYL6zPecqfyjpvX8yKsWdKxc8kfAi9U1kNV2EY.cache.23800.8788.626283, C:/Users/spart/Documents/GitHubProjects/CloudAppProject/economy_manager/tmp/cache/assets/sprockets/v4.0.0/6X/6Xnf0BYL6zPecqfyjpvX8yKsWdKxc8kfAi9U1kNV2EY.cache)):
+
+Causes:
+Errno::EACCES (Permission denied @ rb_file_s_rename - (C:/Users/spart/Documents/GitHubProjects/CloudAppProject/economy_manager/tmp/cache/assets/sprockets/v4.0.0/6X/6Xnf0BYL6zPecqfyjpvX8yKsWdKxc8kfAi9U1kNV2EY.cache.23800.8788.626283, C:/Users/spart/Documents/GitHubProjects/CloudAppProject/economy_manager/tmp/cache/assets/sprockets/v4.0.0/6X/6Xnf0BYL6zPecqfyjpvX8yKsWdKxc8kfAi9U1kNV2EY.cache))
+  
+sprockets (4.2.1) lib/sprockets/path_utils.rb:362:in `rename'
+sprockets (4.2.1) lib/sprockets/path_utils.rb:362:in `atomic_write'
+sprockets (4.2.1) lib/sprockets/cache/file_store.rb:112:in `set'
+sprockets (4.2.1) lib/sprockets/cache.rb:227:in `set'
+sprockets (4.2.1) lib/sprockets/cache.rb:143:in `set'
+sprockets (4.2.1) lib/sprockets/loader.rb:343:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.3.4) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.3.4) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.3.4) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.1) lib/sprockets/base.rb:81:in `find_asset'
+sprockets (4.2.1) lib/sprockets/base.rb:88:in `find_all_linked_assets'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `each'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `to_a'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.3.4) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.3.4) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `block in synchronize'
+concurrent-ruby (1.3.4) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.3.4) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.3.4) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:22:in `execute'
+concurrent-ruby (1.3.4) lib/concurrent-ruby/concurrent/promise.rb:564:in `block in realize'
+concurrent-ruby (1.3.4) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:359:in `run_task'
+concurrent-ruby (1.3.4) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:350:in `block (3 levels) in create_worker'
+<internal:kernel>:187:in `loop'
+concurrent-ruby (1.3.4) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:341:in `block (2 levels) in create_worker'
+concurrent-ruby (1.3.4) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `catch'
+concurrent-ruby (1.3.4) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `block in create_worker'
+Started GET "/favicon.ico" for ::1 at 2024-12-19 03:01:26 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/econ_tables/new" for ::1 at 2024-12-19 03:01:50 +0000
+Processing by EconTablesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering econ_tables/new.html.erb within layouts/application
+  Rendered econ_tables/new.html.erb within layouts/application (Duration: 4.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 61.4ms | GC: 0.0ms)
+Completed 200 OK in 69ms (Views: 62.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-12-19 03:01:51 +0000
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 1.4ms | GC: 0.0ms)
+Completed 200 OK in 21ms (Views: 18.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/econ_tables/new" for ::1 at 2024-12-19 03:28:31 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EconTablesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering econ_tables/new.html.erb within layouts/application
+  Rendered econ_tables/new.html.erb within layouts/application (Duration: 3.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 138ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <% content_for :title, "New econ table" %>
+
+<h1>New EconTable Record</h1>
+
+<%= form_with model: @econ_table, local: true do |form| %>
+  <% if @econ_table.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@econ_table.errors.count, "error") %> prohibited this record from being saved:</h2>
+      <ul>
+        <% @econ_table.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :acronym %>
+    <%= form.text_field :acronym %>
+  </div>
+
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :Image URL %>
+    <%= form.text_field :imgUrl %>
+  </div>
+
+  <div>
+    <%= form.label :gross %>
+    <%= form.number_field :gross %>
+  </div>
+
+  <div>
+    <%= form.label :trade %>
+    <%= form.number_field :trade %>
+  </div>
+
+  <div>
+    <%= form.label :expenditure %>
+    <%= form.number_field :expenditure %>
+  </div>
+
+  <div>
+    <%= form.label :reserve %>
+    <%= form.number_field :reserve %>
+  </div>
+
+  <div>
+    <%= form.label :status %>
+    <%= form.select :status, ["Thrify", "Fertile", "Booming", "Friendly", "Stable", "Naval", "Swift", "Resistant", "Industrious"], prompt: "Select a status" %>
+  </div>
+
+  <div>
+    <%= form.label :co, "Cooperation (0-100)" %>
+    <%= form.number_field :co %>
+  </div>
+
+  <div>
+    <%= form.label :iso, "Isolationism (0-100)" %>
+    <%= form.number_field :iso %>
+  </div>
+
+  <div>
+    <%= form.label :ant, "Antagonism (0-100)" %>
+    <%= form.number_field :ant %>
+  </div>
+
+  <div>
+    <%= form.label :state, "State Control (0-100)" %>
+    <%= form.number_field :state %>
+  </div>
+
+  <div>
+    <%= form.label :ind, "Industrialization (0-100)" %>
+    <%= form.number_field :ind %>
+  </div>
+
+  <div>
+    <%= form.submit "Create EconTable Record" %>
+  </div>
+<% end %>
+):
+
+Causes:
+ActiveSupport::SyntaxErrorProxy (C:/Users/spart/Documents/GitHubProjects/CloudAppProject/economy_manager/app/views/econ_tables/new.html.erb:28: syntax error, unexpected constant, expecting ')'
+....append=( form.label :Image URL ); @output_buffer.safe_appen...
+...                            ^~~
+)
+1:    <% content_for :title, "New econ table" %>
+2:    
+3:    <h1>New EconTable Record</h1>
+4:    
+5:    <%= form_with model: @econ_table, local: true do |form| %>
+6:      <% if @econ_table.errors.any? %>
+7:        <div id="error_explanation">
+8:          <h2><%= pluralize(@econ_table.errors.count, "error") %> prohibited this record from being saved:</h2>
+9:          <ul>
+10:            <% @econ_table.errors.full_messages.each do |message| %>
+11:              <li><%= message %></li>
+12:            <% end %>
+13:          </ul>
+14:        </div>
+15:      <% end %>
+16:    
+17:      <div>
+18:        <%= form.label :acronym %>
+19:        <%= form.text_field :acronym %>
+20:      </div>
+21:    
+22:      <div>
+23:        <%= form.label :name %>
+24:        <%= form.text_field :name %>
+25:      </div>
+26:    
+27:      <div>
+28:        <%= form.label :Image URL %>
+29:        <%= form.text_field :imgUrl %>
+30:      </div>
+31:    
+32:      <div>
+33:        <%= form.label :gross %>
+34:        <%= form.number_field :gross %>
+35:      </div>
+36:    
+37:      <div>
+38:        <%= form.label :trade %>
+39:        <%= form.number_field :trade %>
+40:      </div>
+41:    
+42:      <div>
+43:        <%= form.label :expenditure %>
+44:        <%= form.number_field :expenditure %>
+45:      </div>
+46:    
+47:      <div>
+48:        <%= form.label :reserve %>
+49:        <%= form.number_field :reserve %>
+50:      </div>
+51:    
+52:      <div>
+53:        <%= form.label :status %>
+54:        <%= form.select :status, ["Thrify", "Fertile", "Booming", "Friendly", "Stable", "Naval", "Swift", "Resistant", "Industrious"], prompt: "Select a status" %>
+55:      </div>
+56:    
+57:      <div>
+58:        <%= form.label :co, "Cooperation (0-100)" %>
+59:        <%= form.number_field :co %>
+60:      </div>
+61:    
+62:      <div>
+63:        <%= form.label :iso, "Isolationism (0-100)" %>
+64:        <%= form.number_field :iso %>
+65:      </div>
+66:    
+67:      <div>
+68:        <%= form.label :ant, "Antagonism (0-100)" %>
+69:        <%= form.number_field :ant %>
+70:      </div>
+71:    
+72:      <div>
+73:        <%= form.label :state, "State Control (0-100)" %>
+74:        <%= form.number_field :state %>
+75:      </div>
+76:    
+77:      <div>
+78:        <%= form.label :ind, "Industrialization (0-100)" %>
+79:        <%= form.number_field :ind %>
+80:      </div>
+81:    
+82:      <div>
+83:        <%= form.submit "Create EconTable Record" %>
+84:      </div>
+85:    <% end %>
+  
+app/views/econ_tables/new.html.erb:28: syntax error, unexpected constant, expecting ')'
+Started GET "/econ_tables/new" for ::1 at 2024-12-19 03:30:14 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EconTablesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering econ_tables/new.html.erb within layouts/application
+  Rendered econ_tables/new.html.erb within layouts/application (Duration: 2.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <% content_for :title, "New econ table" %>
+
+<h1>New EconTable Record</h1>
+
+<%= form_with model: @econ_table, local: true do |form| %>
+  <% if @econ_table.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@econ_table.errors.count, "error") %> prohibited this record from being saved:</h2>
+      <ul>
+        <% @econ_table.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :acronym %>
+    <%= form.text_field :acronym %>
+  </div>
+
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :Image URL %>
+    <%= form.text_field :imgUrl %>
+  </div>
+
+  <div>
+    <%= form.label :gross %>
+    <%= form.number_field :gross %>
+  </div>
+
+  <div>
+    <%= form.label :trade %>
+    <%= form.number_field :trade %>
+  </div>
+
+  <div>
+    <%= form.label :expenditure %>
+    <%= form.number_field :expenditure %>
+  </div>
+
+  <div>
+    <%= form.label :reserve %>
+    <%= form.number_field :reserve %>
+  </div>
+
+  <div>
+    <%= form.label :status %>
+    <%= form.select :status, ["Thrify", "Fertile", "Booming", "Friendly", "Stable", "Naval", "Swift", "Resistant", "Industrious"], prompt: "Select a status" %>
+  </div>
+
+  <div>
+    <%= form.label :co, "Cooperation (0-100)" %>
+    <%= form.number_field :co %>
+  </div>
+
+  <div>
+    <%= form.label :iso, "Isolationism (0-100)" %>
+    <%= form.number_field :iso %>
+  </div>
+
+  <div>
+    <%= form.label :ant, "Antagonism (0-100)" %>
+    <%= form.number_field :ant %>
+  </div>
+
+  <div>
+    <%= form.label :state, "State Control (0-100)" %>
+    <%= form.number_field :state %>
+  </div>
+
+  <div>
+    <%= form.label :ind, "Industrialization (0-100)" %>
+    <%= form.number_field :ind %>
+  </div>
+
+  <div>
+    <%= form.submit "Create EconTable Record" %>
+  </div>
+<% end %>
+):
+
+Causes:
+ActiveSupport::SyntaxErrorProxy (C:/Users/spart/Documents/GitHubProjects/CloudAppProject/economy_manager/app/views/econ_tables/new.html.erb:28: syntax error, unexpected constant, expecting ')'
+....append=( form.label :Image URL ); @output_buffer.safe_appen...
+...                            ^~~
+)
+1:    <% content_for :title, "New econ table" %>
+2:    
+3:    <h1>New EconTable Record</h1>
+4:    
+5:    <%= form_with model: @econ_table, local: true do |form| %>
+6:      <% if @econ_table.errors.any? %>
+7:        <div id="error_explanation">
+8:          <h2><%= pluralize(@econ_table.errors.count, "error") %> prohibited this record from being saved:</h2>
+9:          <ul>
+10:            <% @econ_table.errors.full_messages.each do |message| %>
+11:              <li><%= message %></li>
+12:            <% end %>
+13:          </ul>
+14:        </div>
+15:      <% end %>
+16:    
+17:      <div>
+18:        <%= form.label :acronym %>
+19:        <%= form.text_field :acronym %>
+20:      </div>
+21:    
+22:      <div>
+23:        <%= form.label :name %>
+24:        <%= form.text_field :name %>
+25:      </div>
+26:    
+27:      <div>
+28:        <%= form.label :Image URL %>
+29:        <%= form.text_field :imgUrl %>
+30:      </div>
+31:    
+32:      <div>
+33:        <%= form.label :gross %>
+34:        <%= form.number_field :gross %>
+35:      </div>
+36:    
+37:      <div>
+38:        <%= form.label :trade %>
+39:        <%= form.number_field :trade %>
+40:      </div>
+41:    
+42:      <div>
+43:        <%= form.label :expenditure %>
+44:        <%= form.number_field :expenditure %>
+45:      </div>
+46:    
+47:      <div>
+48:        <%= form.label :reserve %>
+49:        <%= form.number_field :reserve %>
+50:      </div>
+51:    
+52:      <div>
+53:        <%= form.label :status %>
+54:        <%= form.select :status, ["Thrify", "Fertile", "Booming", "Friendly", "Stable", "Naval", "Swift", "Resistant", "Industrious"], prompt: "Select a status" %>
+55:      </div>
+56:    
+57:      <div>
+58:        <%= form.label :co, "Cooperation (0-100)" %>
+59:        <%= form.number_field :co %>
+60:      </div>
+61:    
+62:      <div>
+63:        <%= form.label :iso, "Isolationism (0-100)" %>
+64:        <%= form.number_field :iso %>
+65:      </div>
+66:    
+67:      <div>
+68:        <%= form.label :ant, "Antagonism (0-100)" %>
+69:        <%= form.number_field :ant %>
+70:      </div>
+71:    
+72:      <div>
+73:        <%= form.label :state, "State Control (0-100)" %>
+74:        <%= form.number_field :state %>
+75:      </div>
+76:    
+77:      <div>
+78:        <%= form.label :ind, "Industrialization (0-100)" %>
+79:        <%= form.number_field :ind %>
+80:      </div>
+81:    
+82:      <div>
+83:        <%= form.submit "Create EconTable Record" %>
+84:      </div>
+85:    <% end %>
+  
+app/views/econ_tables/new.html.erb:28: syntax error, unexpected constant, expecting ')'
+Started GET "/econ_tables/new" for ::1 at 2024-12-19 03:30:34 +0000
+Processing by EconTablesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering econ_tables/new.html.erb within layouts/application
+  Rendered econ_tables/new.html.erb within layouts/application (Duration: 5.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 57.2ms | GC: 0.0ms)
+Completed 200 OK in 170ms (Views: 64.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-12-19 03:30:35 +0000
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 1.2ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 5.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/econ_tables/new" for ::1 at 2024-12-19 03:32:20 +0000
+Processing by EconTablesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering econ_tables/new.html.erb within layouts/application
+  Rendered econ_tables/new.html.erb within layouts/application (Duration: 5.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 57.8ms | GC: 0.0ms)
+Completed 200 OK in 142ms (Views: 72.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-12-19 03:32:20 +0000
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 5.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/econ_tables" for ::1 at 2024-12-19 03:33:35 +0000
+Processing by EconTablesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "econ_table"=>{"acronym"=>"Aon", "name"=>"Aontas", "imgUrl"=>"https://wiki.kerbalpowers.org/images/1/1c/Aonta_Flag_New.png", "gross"=>"150000000", "trade"=>"0", "expenditure"=>"25000000", "reserve"=>"50000000", "status"=>"Thrify", "co"=>"2", "iso"=>"25", "ant"=>"25", "state"=>"25", "ind"=>"25"}, "commit"=>"Create EconTable Record"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'imgUrl' for EconTable.):
+
+Causes:
+NoMethodError (undefined method `imgUrl=' for an instance of EconTable)
+  
+app/controllers/econ_tables_controller.rb:24:in `create'
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/econ_tables/new" for ::1 at 2024-12-19 03:39:32 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EconTablesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering econ_tables/new.html.erb within layouts/application
+  Rendered econ_tables/new.html.erb within layouts/application (Duration: 47.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 163.1ms | GC: 0.0ms)
+Completed 200 OK in 321ms (Views: 189.0ms | ActiveRecord: 2.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-12-19 03:39:32 +0000
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 14ms (Views: 6.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/econ_tables" for ::1 at 2024-12-19 03:40:16 +0000
+Processing by EconTablesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "econ_table"=>{"acronym"=>"AON", "name"=>"Aontas", "imgUrl"=>"https://wiki.kerbalpowers.org/images/1/1c/Aonta_Flag_New.png", "gross"=>"50000", "trade"=>"44000", "expenditure"=>"40000", "reserve"=>"440000", "status"=>"Friendly", "co"=>"25", "iso"=>"25", "ant"=>"25", "state"=>"52", "ind"=>"25"}, "commit"=>"Create EconTable Record"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'imgUrl' for EconTable.):
+
+Causes:
+NoMethodError (undefined method `imgUrl=' for an instance of EconTable)
+  
+app/controllers/econ_tables_controller.rb:24:in `create'
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/econ_tables/new" for ::1 at 2024-12-19 03:44:29 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EconTablesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering econ_tables/new.html.erb within layouts/application
+  Rendered econ_tables/new.html.erb within layouts/application (Duration: 25.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 136.0ms | GC: 0.0ms)
+Completed 200 OK in 205ms (Views: 144.6ms | ActiveRecord: 2.2ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-12-19 03:44:30 +0000
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 5.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/econ_tables" for ::1 at 2024-12-19 03:44:46 +0000
+Processing by EconTablesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "econ_table"=>{"acronym"=>"tek", "name"=>"aon", "imgUrl"=>"https://wiki.kerbalpowers.org/images/1/1c/Aonta_Flag_New.png", "gross"=>"55", "trade"=>"55", "expenditure"=>"55", "reserve"=>"55", "status"=>"Thrify", "co"=>"55", "iso"=>"55", "ant"=>"55", "state"=>"55", "ind"=>"55"}, "commit"=>"Create EconTable Record"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'imgUrl' for EconTable.):
+
+Causes:
+NoMethodError (undefined method `imgUrl=' for an instance of EconTable)
+  
+app/controllers/econ_tables_controller.rb:24:in `create'
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DropTables (20241219035148)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (14.9ms)[0m  [1m[35mDROP TABLE "ai_table"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "econ_table"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241219035148') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/econ_tables/new" for ::1 at 2024-12-19 03:56:10 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EconTablesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering econ_tables/new.html.erb within layouts/application
+  Rendered econ_tables/new.html.erb within layouts/application (Duration: 27.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 102.6ms | GC: 0.0ms)
+Completed 200 OK in 192ms (Views: 115.1ms | ActiveRecord: 1.8ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-12-19 03:56:10 +0000
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/econ_tables" for ::1 at 2024-12-19 03:56:18 +0000
+Processing by EconTablesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "econ_table"=>{"acronym"=>"55", "name"=>"555", "imgUrl"=>"55", "gross"=>"5", "trade"=>"55", "expenditure"=>"5", "reserve"=>"5", "status"=>"Thrify", "co"=>"5", "iso"=>"5", "ant"=>"5", "state"=>"5", "ind"=>"5"}, "commit"=>"Create EconTable Record"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'imgUrl' for EconTable.):
+
+Causes:
+NoMethodError (undefined method `imgUrl=' for an instance of EconTable)
+  
+app/controllers/econ_tables_controller.rb:24:in `create'
+Started GET "/econ_tables/new" for ::1 at 2024-12-19 03:59:02 +0000
+Processing by EconTablesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering econ_tables/new.html.erb within layouts/application
+  Rendered econ_tables/new.html.erb within layouts/application (Duration: 5.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 39.0ms | GC: 0.0ms)
+Completed 200 OK in 65ms (Views: 44.7ms | ActiveRecord: 3.4ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-12-19 03:59:03 +0000
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 1.7ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/econ_tables" for ::1 at 2024-12-19 03:59:10 +0000
+Processing by EconTablesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "econ_table"=>{"acronym"=>"5", "name"=>"5", "imgUrl"=>"5", "gross"=>"5", "trade"=>"5", "expenditure"=>"5", "reserve"=>"5", "status"=>"Thrify", "co"=>"5", "iso"=>"5", "ant"=>"5", "state"=>"5", "ind"=>"5"}, "commit"=>"Create EconTable Record"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'imgUrl' for EconTable.):
+
+Causes:
+NoMethodError (undefined method `imgUrl=' for an instance of EconTable)
+  
+app/controllers/econ_tables_controller.rb:24:in `create'
+Started GET "/econ_tables/new" for ::1 at 2024-12-19 04:00:22 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EconTablesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering econ_tables/new.html.erb within layouts/application
+  Rendered econ_tables/new.html.erb within layouts/application (Duration: 36.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 120.2ms | GC: 0.0ms)
+Completed 200 OK in 244ms (Views: 140.4ms | ActiveRecord: 4.1ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for ::1 at 2024-12-19 04:00:23 +0000
+Processing by Rails::PwaController#manifest as JSON
+  Rendering pwa/manifest.json.erb
+  Rendered pwa/manifest.json.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 6ms (Views: 3.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/econ_tables" for ::1 at 2024-12-19 04:00:30 +0000
+Processing by EconTablesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "econ_table"=>{"acronym"=>"5", "name"=>"5", "imgUrl"=>"5", "gross"=>"5", "trade"=>"5", "expenditure"=>"5", "reserve"=>"5", "status"=>"Thrify", "co"=>"5", "iso"=>"5", "ant"=>"55", "state"=>"5", "ind"=>"5"}, "commit"=>"Create EconTable Record"}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'imgUrl' for EconTable.):
+
+Causes:
+NoMethodError (undefined method `imgUrl=' for an instance of EconTable)
+  
+app/controllers/econ_tables_controller.rb:24:in `create'
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]

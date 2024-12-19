@@ -1,0 +1,2 @@
+module AiTablesHelper
+end
