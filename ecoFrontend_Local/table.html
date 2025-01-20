@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <title>All Tables</title>
+</head>
+<body>
+	<div id="navbar"></div> 
+	
+  <div class="container mt-5">
+    <h1>All Tables</h1>
+    <h2>Econ Tables</h2>
+    <div class="container mt-5">
+  <h1>Econ Tables</h1>
+  <table id="econ-table" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Acronym</th>
+        <th>Name</th>
+        <th>Gross</th>
+        <th>Trade Balance</th>
+        <th>Expenditure</th>
+        <th>Reserve</th>
+        <th>Status</th>
+        <th>Ind-Stat</th>
+        <th>Antagonistic</th>
+        <th>Isolationist</th>
+        <th>Co-Operative</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Rows will be populated here -->
+    </tbody>
+  </table>
+</div>
+
+    <h2>AI Tables</h2>
+    <table class="table table-striped" id="ai-tables">
+      <thead>
+        <tr>
+          <th>Acronym</th>
+          <th>Name</th>
+          <th>Gross</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Rows dynamically populated -->
+      </tbody>
+    </table>
+  </div>
+
+	<script>
+	// Populate tables on page load
+	document.addEventListener("DOMContentLoaded", () => {
+	  populateEconTables();
+	  populateAiTables();
+	});
+	
+	document.addEventListener('DOMContentLoaded', async () => {
+		const tableBody = document.querySelector('#econ-table tbody');
+	
+	
+
+  try {
+    // Replace with your Rails API URL
+    const response = await fetch('http://your-rails-server-url/api/econs');
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const econs = await response.json();
+
+    // Clear existing rows
+    tableBody.innerHTML = '';
+
+    // Populate the table with data
+    econs.forEach((econ, index) => {
+		  const row = document.createElement('tr');
+
+		  row.innerHTML = `
+			<td>${index + 1}</td>
+			<td>${econ.acronym}</td>
+			<td>${econ.name}</td>
+			<td>${parseFloat(econ.gross).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</td>
+			<td>${parseFloat(econ.trade).toLocaleString()}</td>
+			<td>${parseFloat(econ.expenditure).toLocaleString()}</td>
+			<td>${parseFloat(econ.reserve).toLocaleString()}</td>
+			<td>${econ.status}</td>
+			<td>${econ.ind_stat}%</td>
+			<td>${econ.ant}%</td>
+			<td>${econ.iso}%</td>
+			<td>${econ.co}%</td>
+		  `;
+
+		  tableBody.appendChild(row);
+		});
+	  } catch (error) {
+		console.error('Error fetching data:', error);
+		tableBody.innerHTML = `<tr><td colspan="12" class="text-center text-danger">Failed to load data.</td></tr>`;
+	  }
+	});
+
+	  fetch('/assets/navbar.html')
+		.then(response => response.text())
+		.then(data => {
+		  document.getElementById('navbar').innerHTML = data;
+		})
+		.catch(error => console.error('Error loading navbar:', error));
+	</script>
+	
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

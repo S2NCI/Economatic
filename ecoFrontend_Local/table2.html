@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <title>All Tables</title>
+</head>
+<body onload = "loadData()">
+	<div id="navbar"></div> 
+	
+	<div id="ecoTable" class="container mt-5"></div> 
+
+	<script>
+	async function loadData() {
+		var url = "http://localhost:3000/tables"
+		var response = await fetch(url, {headers: {'Accept': 'application/json'}})
+		var data = await response.json()
+		
+		for(var i = 0;i < data.length; i++) {
+			var completed = "Not Completed"
+			if(data[i]["completed"]) {
+				completed = "Completed"
+			}
+			div += completed + ':' + data[i]['title'] + "<br/><br/>"
+		}
+	}
+	
+	// Navbar Bootstapper
+	  fetch('/assets/navbar.html')
+		.then(response => response.text())
+		.then(data => {
+		  document.getElementById('navbar').innerHTML = data;
+		})
+		.catch(error => console.error('Error loading navbar:', error));
+	</script>
+	
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

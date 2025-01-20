@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <title>New Econ</title>
+</head>
+<body>
+	<div id="navbar"></div> 
+  <div class="container mt-5">
+    <h1>New Econ Entry</h1>
+	<hr>
+    <h3>General</h3>
+    <form id="create-econ-form" onsubmit="createEconTable(event)">
+		<div class="mb-3">
+			<label for="acronym" class="form-label">Acronym</label>
+			<input type="text" id="acronym" class="form-control" required>
+		</div>
+
+		<div class="mb-3">
+			<label for="name" class="form-label">Name</label>
+			<input type="text" id="name" class="form-control" required>
+		</div>
+
+		<div class="mb-3">
+			<label for="gross" class="form-label">Gross</label>
+			<input type="number" id="gross" class="form-control" required>
+		</div>
+
+		  <div class="mb-3">
+			<label for="trade" class="form-label">Trade Balance</label>
+			<input type="number" id="trade" class="form-control" required>
+		  </div>
+
+		  <div class="mb-3">
+			<label for="expenditure" class="form-label">Expenditure</label>
+			<input type="number" id="expenditure" class="form-control" required>
+		  </div>
+
+		  <div class="mb-3">
+			<label for="reserve" class="form-label">Reserve</label>
+			<input type="number" id="reserve" class="form-control" required>
+		  </div>
+
+		  <div class="mb-3">
+			<label for="status" class="form-label">Status</label>
+			<select id="status" class="form-select" required>
+			  <option value="Booming">Booming</option>
+			  <option value="Stable">Stable</option>
+			  <option value="Friendly">Friendly</option>
+			  <option value="Thrify">Thrify</option>
+			  <option value="Industrious">Industrious</option>
+			  <option value="Resistant">Resistant</option>
+			  <option value="Naval">Naval</option>
+			  <option value="Swift">Swift</option>
+			  <option value="Fertile">Fertile</option>
+			</select>
+		  </div>
+
+		
+    <h3>Disposition</h3>
+		<div class="mb-3">
+			<label for="ind-stat" class="form-label">Ind-Stat</label>: <span id="ind-stat-value">50% : 50%</span>
+			<input type="range" id="ind-stat" class="form-range" min="0" max="100" value="50">
+		</div>
+	
+		<div class="mb-3">
+			<label for="ant" class="form-label">Antagonistic</label>: <span id="ant-value">33</span>%
+			<input type="range" id="ant" class="form-range" min="0" max="100" value="33">
+		</div>
+
+		<div class="mb-3">
+			<label for="iso" class="form-label">Isolationist</label>: <span id="iso-value">34</span>%
+			<input type="range" id="iso" class="form-range" min="0" max="100" value="34">
+		</div>
+
+		<div class="mb-3">
+			<label for="co" class="form-label">Co-Operative</label>: <span id="co-value">33</span>%
+			<input type="range" id="co" class="form-range" min="0" max="100" value="33">
+		</div>
+      <button type="submit" class="btn btn-primary">Create New Entry</button>
+    </form>
+  </div>
+
+	<script>
+	  fetch('/assets/navbar.html')
+		.then(response => response.text())
+		.then(data => {
+		  document.getElementById('navbar').innerHTML = data;
+		})
+		.catch(error => console.error('Error loading navbar:', error));
+		
+		// Function to update slider value display
+		const updateSliderValue = (sliderId, valueId) => {
+		  const slider = document.getElementById(sliderId);
+		  const valueDisplay = document.getElementById(valueId);
+		  valueDisplay.innerText = slider.value;
+		};
+		
+		const updateSliderValue2 = (sliderId, value) => {
+		  // Update the display value as value:value format
+		  document.getElementById(`${sliderId}-value`).textContent = `${value}% : ${100-value}%`;
+		};
+
+		// Function to ensure the sum of ANT, ISO, and CO is always 100
+		const enforceSliderLimit = (changedSliderId) => {
+		  const ant = document.getElementById('ant');
+		  const iso = document.getElementById('iso');
+		  const co = document.getElementById('co');
+
+		  const sliders = {
+			ant,
+			iso,
+			co,
+		  };
+
+		  // Get the value of the changed slider
+		  const changedSlider = sliders[changedSliderId];
+		  const changedValue = parseInt(changedSlider.value, 10);
+
+		  // Get the sum of the values from all three sliders
+		  const total = parseInt(ant.value, 10) + parseInt(iso.value, 10) + parseInt(co.value, 10);
+
+		  // If the total is greater than 100, adjust the other two sliders
+		  if (total > 100) {
+			// Calculate the excess difference
+			const excess = total - 100;
+
+			// Calculate the adjustment for each of the other sliders equally
+			const adjustment = Math.floor(excess / 2);
+
+			if (changedSliderId === 'ant') {
+			  iso.value = Math.max(0, parseInt(iso.value, 10) - adjustment);
+			  co.value = Math.max(0, parseInt(co.value, 10) - adjustment);
+			} else if (changedSliderId === 'iso') {
+			  ant.value = Math.max(0, parseInt(ant.value, 10) - adjustment);
+			  co.value = Math.max(0, parseInt(co.value, 10) - adjustment);
+			} else {
+			  ant.value = Math.max(0, parseInt(ant.value, 10) - adjustment);
+			  iso.value = Math.max(0, parseInt(iso.value, 10) - adjustment);
+			}
+		  }
+
+		  // If the total is less than 100, adjust the other two sliders
+		  if (total < 100) {
+			// Calculate the shortfall difference
+			const shortfall = 100 - total;
+
+			// Calculate the adjustment for each of the other sliders equally
+			const adjustment = Math.floor(shortfall / 2);
+
+			if (changedSliderId === 'ant') {
+			  iso.value = Math.min(100, parseInt(iso.value, 10) + adjustment);
+			  co.value = Math.min(100, parseInt(co.value, 10) + adjustment);
+			} else if (changedSliderId === 'iso') {
+			  ant.value = Math.min(100, parseInt(ant.value, 10) + adjustment);
+			  co.value = Math.min(100, parseInt(co.value, 10) + adjustment);
+			} else {
+			  ant.value = Math.min(100, parseInt(ant.value, 10) + adjustment);
+			  iso.value = Math.min(100, parseInt(iso.value, 10) + adjustment);
+			}
+		  }
+
+			// Update the slider values displayed
+			updateSliderValue('ant', 'ant-value');
+			updateSliderValue('iso', 'iso-value');
+			updateSliderValue('co', 'co-value');
+		};
+
+		// Attach event listeners to sliders
+		['ant', 'iso', 'co'].forEach(id => {
+		  const slider = document.getElementById(id);
+
+		  slider.addEventListener('input', () => {
+			updateSliderValue(id, `${id}-value`);
+			document.getElementById(id).addEventListener('input', () => enforceSliderLimit(id));
+
+		  });
+		});
+		// Add event listeners for each of the sliders
+		['ind-stat'].forEach(id => {
+		  const slider = document.getElementById(id);
+		  slider.addEventListener('input', function() {
+			updateSliderValue2(id, this.value);
+		  });
+		});
+		
+
+		// Form submission handler
+		document.getElementById('create-econ-form').addEventListener('submit', createEconTable);
+  </script>
+	
+  
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

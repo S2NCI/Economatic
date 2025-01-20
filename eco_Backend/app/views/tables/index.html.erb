@@ -1,0 +1,17 @@
+<div id="econ_tables">
+
+  <% content_for :title, "Econ tables" %>
+
+  <h1>Major Table</h1>
+
+
+      <% @econ_tables.each do |econ_table| %>
+        
+    <%= render econ_table %>
+          
+            <%= link_to "Details", edit_econ_table_path(econ_table), class: "btn btn-warning" %>
+          
+        
+      <% end %>
+</div>
+

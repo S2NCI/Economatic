@@ -1,0 +1,77 @@
+<%= form_with(model: econ_table) do |form| %>
+  <% if econ_table.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(econ_table.errors.count, "error") %> prohibited this econ_table from being saved:</h2>
+
+      <ul>
+        <% econ_table.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :acronym, style: "display: block" %>
+    <%= form.text_field :acronym %>
+  </div>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :imgUrl, "Image URL", style: "display: block" %>
+    <%= form.text_field :imgUrl %>
+  </div>
+
+  <div>
+    <%= form.label :gross, style: "display: block" %>
+    <%= form.number_field :gross %>
+  </div>
+
+  <div>
+    <%= form.label :trade, style: "display: block" %>
+    <%= form.number_field :trade %>
+  </div>
+
+  <div>
+    <%= form.label :expenditure, style: "display: block" %>
+    <%= form.number_field :expenditure %>
+  </div>
+
+  <div>
+    <%= form.label :reserve, "Reserve", style: "display: block" %>
+    <%= form.number_field :reserve %>
+  </div>
+
+  <div>
+    <%= form.label :status, style: "display: block" %>
+    <%= form.select :status, options_for_select([ 'Friendly', 'Swift', 'Thrifty', 'Generous', 'Independent', 'Reliable'], econ_table.status) %>
+  </div>
+
+  <hr></hr>
+
+  <div>
+    <%= form.label :co, "Co-Operative Coefficient", style: "display: block" %>
+    <input type="range" id="co_slider" min="0" max="100" value="<%= econ_table.co %>" oninput="adjustSliders('co')" />
+    <span id="co_value"><%= econ_table.co %></span>
+    <%= form.hidden_field :co, id: "co_hidden", value: econ_table.co %>
+  </div>
+
+  <div>
+    <%= form.label :iso, "Isolationist Coefficient", style: "display: block" %>
+    <input type="range" id="iso_slider" min="0" max="100" value="<%= econ_table.iso %>" oninput="adjustSliders('iso')" />
+    <span id="iso_value"><%= econ_table.iso %></span>
+    <%= form.hidden_field :iso, id: "iso_hidden", value: econ_table.iso %>
+  </div>
+
+  <div>
+    <%= form.label :ant, "Antagonistic Coefficient", style: "display: block" %>
+    <input type="range" id="ant_slider" min="0" max="100" value="<%= econ_table.ant %>" oninput="adjustSliders('nt')" />
+    <span id="ant_value"><%= econ_table.ant %></span>
+    <%= form.hidden_field :ant, id: "ant_hidden", value: econ_table.ant %>
+  </div>
+
+<% end %>
