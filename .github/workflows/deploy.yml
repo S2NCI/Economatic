@@ -16,9 +16,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: List repo root
-        run: ls -la /home/runner/work/Economatic/Economatic
-
       # Step 2: Set up Ruby environment
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -32,25 +29,34 @@ jobs:
           cd eco_backend
           bundle install
 
-      # Step 4: Ensure Rails bin files have execution permissions
+      # Step 4: Regenerate binstubs for Linux 
+      - name: BinStubs
+        working-directory: eco_backend
+        run: |
+          rm -rf bin
+          bundle install
+          bundle binstubs bundler --force
+          rails app:update:bin
+
+      # Step 5: Ensure Rails bin files have execution permissions
       - name: Fix Rails permissions
         run: |
           cd eco_backend
           chmod +x bin/*
 
-      # Step 5: Run database migrations
+      # Step 6: Run database migrations
       - name: Set up database
         run: |
           cd eco_backend
           bin/rails db:migrate RAILS_ENV=production
 
-      # Step 6: Precompile assets
+      # Step 7: Precompile assets
       - name: Precompile assets
         run: |
           cd eco_backend
           bin/rails assets:precompile RAILS_ENV=production
 
-      # Step 7: Deploy to EC2
+      # Step 8: Deploy to EC2
       - name: Deploy to EC2
         env:
           SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
@@ -74,6 +80,6 @@ jobs:
           sudo systemctl restart economatic
           EOF
 
-      # Step 8: Clean up sensitive data
+      # Step 9: Clean up sensitive data
       - name: Clean up
         run: rm -f private_key.pem
