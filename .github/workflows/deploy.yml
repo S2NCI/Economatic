@@ -29,6 +29,10 @@ jobs:
         run: |
           bundle install
 
+      - name: Debug eco_backend contents
+        working-directory: eco_backend
+        run: ls -la
+
       # Step 4: Regenerate binstubs for Linux 
       - name: BinStubs
         working-directory: eco_backend
