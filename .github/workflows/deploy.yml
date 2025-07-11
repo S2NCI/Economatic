@@ -36,7 +36,7 @@ jobs:
           rm -rf bin
           bundle install
           bundle binstubs bundler --force
-          rails app:update:bin
+          bundle exec rails app:update:bin
 
       # Step 5: Ensure Rails bin files have execution permissions
       - name: Fix Rails permissions
