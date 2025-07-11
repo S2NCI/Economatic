@@ -25,9 +25,8 @@ jobs:
 
       # Step 3: Install dependencies in backend folder
       - name: Install dependencies
-        run: |
-          cd eco_backend
-          bundle install
+        working-directory: eco_backend
+        run: bundle install
 
       # Step 4: Ensure Rails bin files have execution permissions
       - name: Fix Rails permissions
