@@ -25,8 +25,8 @@ jobs:
 
       # Step 3: Install dependencies in backend folder
       - name: Install dependencies
+        working-directory: eco_backend
         run: |
-          cd eco_backend
           bundle install
 
       # Step 4: Regenerate binstubs for Linux 
@@ -40,20 +40,20 @@ jobs:
 
       # Step 5: Ensure Rails bin files have execution permissions
       - name: Fix Rails permissions
+        working-directory: eco_backend
         run: |
-          cd eco_backend
           chmod +x bin/*
 
       # Step 6: Run database migrations
       - name: Set up database
+        working-directory: eco_backend
         run: |
-          cd eco_backend
           bin/rails db:migrate RAILS_ENV=production
 
       # Step 7: Precompile assets
       - name: Precompile assets
+        working-directory: eco_backend
         run: |
-          cd eco_backend
           bin/rails assets:precompile RAILS_ENV=production
 
       # Step 8: Deploy to EC2
