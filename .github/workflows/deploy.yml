@@ -1,5 +1,5 @@
 
-name: Deploy Economiser to EC2
+name: Deploy Economatic to EC2
 
 on:
   push:
@@ -35,7 +35,7 @@ jobs:
           cd economy_manager
           chmod +x bin/*
 
-      # Step 5: Run database migrations (optional: skip if not needed for deployment)
+      # Step 5: Run database migrations
       - name: Set up database
         run: |
           cd economy_manager
@@ -57,7 +57,7 @@ jobs:
           echo "$SSH_PRIVATE_KEY" > private_key.pem
           chmod 600 private_key.pem
 
-          DEPLOY_DIR=/var/www/economiser
+          DEPLOY_DIR=/var/www/economatic
 
           # Transfer the application files to the EC2 instance
           scp -i private_key.pem -r ./economy_manager $EC2_USER@$EC2_HOST:$DEPLOY_DIR
@@ -68,7 +68,7 @@ jobs:
           bundle install
           RAILS_ENV=production bin/rails db:migrate
           RAILS_ENV=production bin/rails assets:precompile
-          sudo systemctl restart economiser # Replace with the actual service name if different
+          sudo systemctl restart economatic
           EOF
 
       # Step 8: Clean up sensitive data
