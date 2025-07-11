@@ -23,28 +23,28 @@ jobs:
           ruby-version: 3.3.5
           bundler-cache: true
 
-      # Step 3: Navigate to `economy_manager` and install dependencies
+      # Step 3: Install dependencies in backend folder
       - name: Install dependencies
         run: |
-          cd economy_manager
+          cd eco_backend
           bundle install
 
       # Step 4: Ensure Rails bin files have execution permissions
       - name: Fix Rails permissions
         run: |
-          cd economy_manager
+          cd eco_backend
           chmod +x bin/*
 
       # Step 5: Run database migrations
       - name: Set up database
         run: |
-          cd economy_manager
+          cd eco_backend
           bin/rails db:migrate RAILS_ENV=production
 
       # Step 6: Precompile assets
       - name: Precompile assets
         run: |
-          cd economy_manager
+          cd eco_backend
           bin/rails assets:precompile RAILS_ENV=production
 
       # Step 7: Deploy to EC2
