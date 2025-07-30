@@ -2,6 +2,9 @@
  * @jest-environment jsdom
  */
 
+global.fetch = jest.fn();
+global.alert = jest.fn();
+
 const {
   loadEntries,
   loadEntryDetails,
@@ -11,21 +14,43 @@ const {
 } = require('./app');
 
 beforeEach(() => {
-  // Reset DOM before each test
-  document.body.innerHTML = '';
-  fetch.resetMocks && fetch.resetMocks(); // if using jest-fetch-mock
+  document.body.innerHTML = `
+    <select id="table-type"><option value="econ" selected>econ</option></select>
+    <select id="entry-select"></select>
+
+    <div id="entry-details" class="d-none">
+      <span id="detail-name"></span>
+      <span id="detail-acronym"></span>
+      <span id="detail-gross"></span>
+      <span id="detail-trade"></span>
+      <span id="detail-expenditure"></span>
+      <span id="detail-reserve"></span>
+      <span id="detail-deficit"></span>
+    </div>
+
+    <table id="econ-tables"><tbody></tbody></table>
+    <table id="ai-tables"><tbody></tbody></table>
+
+    <input id="acronym" value="XYZ"/>
+    <input id="name" value="Test Entry"/>
+    <input id="gross" value="1234"/>
+    <input id="trade" value="234"/>
+    <input id="expenditure" value="345"/>
+    <input id="reserve" value="456"/>
+    <input id="status" value="Stable"/>
+    <input id="state" value="Yes"/>
+    <input id="ind" value="IND"/>
+    <input id="ant" value="ANT"/>
+    <input id="iso" value="ISO"/>
+    <input id="co" value="CO"/>
+  `;
+
+  fetch.mockClear();
+  alert.mockClear();
 });
 
-global.fetch = jest.fn(); // Mock fetch globally
-
 describe('app.js functions', () => {
-
   test('loadEntries populates the entry dropdown', async () => {
-    document.body.innerHTML = `
-      <select id="table-type"><option value="econ" selected>econ</option></select>
-      <select id="entry-select"></select>
-    `;
-
     fetch.mockResolvedValueOnce({
       json: async () => [
         { id: 1, acronym: 'ABC', name: 'Test Economy' },
@@ -42,18 +67,7 @@ describe('app.js functions', () => {
   });
 
   test('loadEntryDetails fills in details', async () => {
-    document.body.innerHTML = `
-      <select id="table-type"><option value="econ" selected>econ</option></select>
-      <select id="entry-select"><option value="1" selected>1</option></select>
-      <div id="entry-details" class="d-none"></div>
-      <span id="detail-acronym"></span>
-      <span id="detail-name"></span>
-      <span id="detail-gross"></span>
-      <span id="detail-trade"></span>
-      <span id="detail-expenditure"></span>
-      <span id="detail-reserve"></span>
-      <span id="detail-deficit"></span>
-    `;
+    document.getElementById('entry-select').innerHTML = `<option value="1" selected>1</option>`;
 
     fetch.mockResolvedValueOnce({
       json: async () => ({
@@ -74,24 +88,6 @@ describe('app.js functions', () => {
   });
 
   test('createEconTable sends POST and alerts on success', async () => {
-    document.body.innerHTML = `
-      <form id="econ-form"></form>
-      <input id="acronym" value="XYZ"/>
-      <input id="name" value="Test Entry"/>
-      <input id="gross" value="1234"/>
-      <input id="trade" value="234"/>
-      <input id="expenditure" value="345"/>
-      <input id="reserve" value="456"/>
-      <input id="status" value="Stable"/>
-      <input id="state" value="Yes"/>
-      <input id="ind" value="IND"/>
-      <input id="ant" value="ANT"/>
-      <input id="iso" value="ISO"/>
-      <input id="co" value="CO"/>
-    `;
-
-    global.alert = jest.fn();
-
     fetch.mockResolvedValueOnce({
       ok: true,
       json: async () => ({ id: 1 })
@@ -107,8 +103,6 @@ describe('app.js functions', () => {
   });
 
   test('populateEconTables creates rows from data', async () => {
-    document.body.innerHTML = `<table id="econ-tables"><tbody></tbody></table>`;
-
     fetch.mockResolvedValueOnce({
       json: async () => [
         { id: 1, acronym: 'ABC', name: 'A', gross: 1000 }
@@ -122,8 +116,6 @@ describe('app.js functions', () => {
   });
 
   test('populateAiTables creates rows from data', async () => {
-    document.body.innerHTML = `<table id="ai-tables"><tbody></tbody></table>`;
-
     fetch.mockResolvedValueOnce({
       json: async () => [
         { id: 2, acronym: 'XYZ', name: 'B', gross: 2000 }
