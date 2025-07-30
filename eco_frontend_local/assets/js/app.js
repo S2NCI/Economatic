@@ -109,55 +109,59 @@ const createEconTable = async (event) => {
 
 
 // Function to populate EconTable
-const populateEconTables = () => {
-  fetch(`${apiBaseUrl}/econ_tables`)
-    .then(response => response.json())
-    .then(data => {
-      const econTableBody = document.querySelector("#econ-tables tbody");
-      econTableBody.innerHTML = ""; // Clear previous rows
+const populateEconTables = async () => {
+  try {
+    const response = await fetch(`${apiBaseUrl}/econ_tables`);
+    const data = await response.json();
 
-      data.forEach((row) => {
-        const tableRow = `
-          <tr>
-            <td>${row.acronym}</td>
-            <td>${row.name}</td>
-            <td>${row.gross}</td>
-            <td>
-              <a href="${apiBaseUrl}/econ_tables/${row.id}/edit" class="btn btn-primary btn-sm">Edit</a>
-              <a href="${apiBaseUrl}/econ_tables/${row.id}" class="btn btn-secondary btn-sm">View</a>
-            </td>
-          </tr>
-        `;
-        econTableBody.innerHTML += tableRow;
-      });
-    })
-    .catch(error => console.error("Error fetching Econ Tables:", error));
+    const econTableBody = document.querySelector("#econ-tables tbody");
+    econTableBody.innerHTML = ""; // Clear previous rows
+
+    data.forEach((row) => {
+      const tableRow = `
+        <tr>
+          <td>${row.acronym}</td>
+          <td>${row.name}</td>
+          <td>${row.gross}</td>
+          <td>
+            <a href="${apiBaseUrl}/econ_tables/${row.id}/edit" class="btn btn-primary btn-sm">Edit</a>
+            <a href="${apiBaseUrl}/econ_tables/${row.id}" class="btn btn-secondary btn-sm">View</a>
+          </td>
+        </tr>
+      `;
+      econTableBody.innerHTML += tableRow;
+    });
+  } catch (error) {
+    console.error("Error fetching Econ Tables:", error);
+  }
 };
 
 // Function to populate AiTable
-const populateAiTables = () => {
-  fetch(`${apiBaseUrl}/ai_tables`)
-    .then(response => response.json())
-    .then(data => {
-      const aiTableBody = document.querySelector("#ai-tables tbody");
-      aiTableBody.innerHTML = ""; // Clear previous rows
+const populateAiTables = async () => {
+  try {
+    const response = await fetch(`${apiBaseUrl}/ai_tables`);
+    const data = await response.json();
 
-      data.forEach((row) => {
-        const tableRow = `
-          <tr>
-            <td>${row.acronym}</td>
-            <td>${row.name}</td>
-            <td>${row.gross}</td>
-            <td>
-              <a href="${apiBaseUrl}/ai_tables/${row.id}/edit" class="btn btn-primary btn-sm">Edit</a>
-              <a href="${apiBaseUrl}/ai_tables/${row.id}" class="btn btn-secondary btn-sm">View</a>
-            </td>
-          </tr>
-        `;
-        aiTableBody.innerHTML += tableRow;
-      });
-    })
-    .catch(error => console.error("Error fetching AI Tables:", error));
+    const aiTableBody = document.querySelector("#ai-tables tbody");
+    aiTableBody.innerHTML = ""; // Clear previous rows
+
+    data.forEach((row) => {
+      const tableRow = `
+        <tr>
+          <td>${row.acronym}</td>
+          <td>${row.name}</td>
+          <td>${row.gross}</td>
+          <td>
+            <a href="${apiBaseUrl}/ai_tables/${row.id}/edit" class="btn btn-primary btn-sm">Edit</a>
+            <a href="${apiBaseUrl}/ai_tables/${row.id}" class="btn btn-secondary btn-sm">View</a>
+          </td>
+        </tr>
+      `;
+      aiTableBody.innerHTML += tableRow;
+    });
+  } catch (error) {
+    console.error("Error fetching AI Tables:", error);
+  }
 };
 
 if (typeof module !== 'undefined') {
