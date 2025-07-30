@@ -25,23 +25,25 @@ async function loadEntries() {
 }
 
 // Fetch and display details for the selected entry
-function loadEntryDetails() {
+async function loadEntryDetails() {
   const tableType = document.getElementById('table-type').value;
   const entryId = document.getElementById('entry-select').value;
 
-  fetch(`${apiBaseUrl}/${tableType}_tables/${entryId}.json`)
-    .then((res) => res.json())
-    .then((data) => {
-      document.getElementById('entry-details').classList.remove('d-none');
-      document.getElementById('detail-acronym').textContent = data.acronym;
-      document.getElementById('detail-name').textContent = data.name;
-      document.getElementById('detail-gross').textContent = `$${data.gross.toLocaleString()}`;
-      document.getElementById('detail-trade').textContent = `$${data.trade.toLocaleString()}`;
-      document.getElementById('detail-expenditure').textContent = `$${data.expenditure.toLocaleString()}`;
-      document.getElementById('detail-reserve').textContent = `$${data.reserve.toLocaleString()}`;
-      document.getElementById('detail-deficit').textContent = `$${data.deficit.toLocaleString()}`;
-    })
-    .catch((err) => console.error('Error loading entry details:', err));
+  try {
+    const res = await fetch(`${apiBaseUrl}/${tableType}_tables/${entryId}.json`);
+    const data = await res.json();
+
+    document.getElementById('entry-details').classList.remove('d-none');
+    document.getElementById('detail-acronym').textContent = data.acronym;
+    document.getElementById('detail-name').textContent = data.name;
+    document.getElementById('detail-gross').textContent = `$${data.gross.toLocaleString()}`;
+    document.getElementById('detail-trade').textContent = `$${data.trade.toLocaleString()}`;
+    document.getElementById('detail-expenditure').textContent = `$${data.expenditure.toLocaleString()}`;
+    document.getElementById('detail-reserve').textContent = `$${data.reserve.toLocaleString()}`;
+    document.getElementById('detail-deficit').textContent = `$${data.deficit.toLocaleString()}`;
+  } catch (err) {
+    console.error('Error loading entry details:', err);
+  }
 }
 
 
