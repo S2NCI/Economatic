@@ -156,3 +156,12 @@ const populateAiTables = () => {
     .catch(error => console.error("Error fetching AI Tables:", error));
 };
 
+if (typeof module !== 'undefined') {
+  module.exports = {
+    loadEntries,
+    loadEntryDetails,
+    createEconTable,
+    populateEconTables,
+    populateAiTables
+  };
+}
