@@ -2,24 +2,26 @@
 const apiBaseUrl = "http://localhost:3000";
 
 // Fetch entries for the selected table type
-function loadEntries() {
+async function loadEntries() {
   const tableType = document.getElementById('table-type').value;
   const entrySelect = document.getElementById('entry-select');
 
   // Clear previous entries
   entrySelect.innerHTML = '<option value="" selected disabled>Choose an entry</option>';
 
-  fetch(`${apiBaseUrl}/${tableType}_tables.json`)
-    .then((res) => res.json())
-    .then((data) => {
-      data.forEach((entry) => {
-        const option = document.createElement('option');
-        option.value = entry.id;
-        option.textContent = `${entry.acronym} - ${entry.name}`;
-        entrySelect.appendChild(option);
-      });
-    })
-    .catch((err) => console.error('Error loading entries:', err));
+  try {
+    const res = await fetch(`${apiBaseUrl}/${tableType}_tables.json`);
+    const data = await res.json();
+
+    data.forEach((entry) => {
+      const option = document.createElement('option');
+      option.value = entry.id;
+      option.textContent = `${entry.acronym} - ${entry.name}`;
+      entrySelect.appendChild(option);
+    });
+  } catch (err) {
+    console.error('Error loading entries:', err);
+  }
 }
 
 // Fetch and display details for the selected entry
