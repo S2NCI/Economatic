@@ -52,13 +52,13 @@ jobs:
       - name: Set up database
         working-directory: eco_backend
         run: |
-          bin/rails db:migrate RAILS_ENV=production
+          bundle exec rails db:migrate RAILS_ENV=production
 
       # Step 7: Precompile assets
       - name: Precompile assets
         working-directory: eco_backend
         run: |
-          bin/rails assets:precompile RAILS_ENV=production
+          bundle exec rails assets:precompile RAILS_ENV=production
 
       # Step 8: Deploy to EC2
       - name: Deploy to EC2
