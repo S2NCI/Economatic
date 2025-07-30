@@ -3,39 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
   <title>Create Econ Table</title>
 </head>
 <body>
 	<div id="navbar"></div> 
-  <div class="container mt-5">
-    <h1>Create Econ Table</h1>
-    <form id="create-econ-form" onsubmit="createEconTable(event)">
-      <div class="mb-3">
-        <label for="acronym" class="form-label">Acronym</label>
-        <input type="text" id="acronym" class="form-control" required>
-      </div>
-      <div class="mb-3">
-        <label for="name" class="form-label">Name</label>
-        <input type="text" id="name" class="form-control" required>
-      </div>
-      <div class="mb-3">
-        <label for="gross" class="form-label">Gross</label>
-        <input type="number" id="gross" class="form-control" required>
-      </div>
-      <button type="submit" class="btn btn-primary">Create</button>
-    </form>
-  </div>
+	  <main class="container mt-5">
+		<h1>Create Econ Table</h1>
+		<form id="create-econ-form" onsubmit="createEconTable(event)">
+		  <div class="mb-3">
+			<label for="acronym" class="form-label">Acronym</label>
+			<input type="text" id="acronym" class="form-control" required>
+		  </div>
+		  <div class="mb-3">
+			<label for="name" class="form-label">Name</label>
+			<input type="text" id="name" class="form-control" required>
+		  </div>
+		  <div class="mb-3">
+			<label for="gross" class="form-label">Gross</label>
+			<input type="number" id="gross" class="form-control" required>
+		  </div>
+		  <button type="submit" class="btn btn-primary">Create</button>
+		</form>
+	  </main>
+  
+	<div id="footer"></div>
 
 	<script>
-	  fetch('/assets/navbar.html')
+	  fetch('assets/navbar.html')
 		.then(response => response.text())
 		.then(data => {
 		  document.getElementById('navbar').innerHTML = data;
 		})
 		.catch(error => console.error('Error loading navbar:', error));
+		
+	  fetch('assets/footer.html')
+		.then(res => res.text())
+		.then(html => {
+		  document.getElementById('footer').innerHTML = html;
+		})
+		.catch(err => console.error('Footer load error:', err));
 	</script>
   
   <script src="assets/js/main.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
